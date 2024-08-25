@@ -112,7 +112,7 @@
             this.lst_Sensores.ItemHeight = 20;
             this.lst_Sensores.Location = new System.Drawing.Point(499, 88);
             this.lst_Sensores.Name = "lst_Sensores";
-            this.lst_Sensores.Size = new System.Drawing.Size(306, 224);
+            this.lst_Sensores.Size = new System.Drawing.Size(182, 224);
             this.lst_Sensores.TabIndex = 27;
             this.lst_Sensores.DoubleClick += new System.EventHandler(this.lst_Sensores_DoubleClick);
             // 
@@ -183,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(853, 362);
+            this.ClientSize = new System.Drawing.Size(739, 362);
             this.Controls.Add(this.cmb_IdUbicacion);
             this.Controls.Add(this.btn_Eliminar);
             this.Controls.Add(this.btn_Modificar);

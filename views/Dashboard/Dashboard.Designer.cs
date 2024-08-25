@@ -82,6 +82,7 @@
             this.eVENTOSToolStripMenuItem.Name = "eVENTOSToolStripMenuItem";
             this.eVENTOSToolStripMenuItem.Size = new System.Drawing.Size(88, 25);
             this.eVENTOSToolStripMenuItem.Text = "EVENTOS";
+            this.eVENTOSToolStripMenuItem.Click += new System.EventHandler(this.eVENTOSToolStripMenuItem_Click);
             // 
             // picture
             // 

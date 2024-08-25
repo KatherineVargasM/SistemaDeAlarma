@@ -9,17 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaDeAlarma.controller;
 using SistemaDeAlarma.models;
+using SistemaDeAlarma.config;
 
 namespace SistemaDeAlarma.views.Sensores
 {
     public partial class frm_sensores : Form
     {
         private sensoresController sensoresController;
+        private ubicacionesController ubicacionesController;
 
         public frm_sensores()
         {
             InitializeComponent();
             sensoresController = new sensoresController();
+            ubicacionesController = new ubicacionesController();
+
         }
 
         private void frm_sensores_Load(object sender, EventArgs e)
@@ -31,14 +35,15 @@ namespace SistemaDeAlarma.views.Sensores
         {
             var sensores = sensoresController.ObtenerTodosLosSensores();
             lst_Sensores.DataSource = sensores;
-            lst_Sensores.DisplayMember = "TipoSensor";
+            lst_Sensores.DisplayMember = "IdSensor";
             lst_Sensores.ValueMember = "IdSensor";
         }
         private void CargarUbicaciones()
         {
+            var ubicacionesController = new ubicacionesController();
             var ubicaciones = sensoresController.ObtenerTodosLosSensores();
             cmb_IdUbicacion.DataSource = ubicaciones;
-            cmb_IdUbicacion.DisplayMember = "NombreUbicacion";
+            cmb_IdUbicacion.DisplayMember = "LugarUbicacion";
             cmb_IdUbicacion.ValueMember = "IdUbicacion";
         }
 
@@ -77,7 +82,7 @@ namespace SistemaDeAlarma.views.Sensores
                 if (insertado != null)
                 {
                     CargarSensores();
-                    MessageBox.Show("Sensor insertado correctamente.", "Éxito", MessageBoxButtons.OK);
+                    ControlErrores.ManejarInsertar();
                 }
                 else
                 {
@@ -121,7 +126,7 @@ namespace SistemaDeAlarma.views.Sensores
                 if (resultado == "OK")
                 {
                     CargarSensores();
-                    MessageBox.Show("Sensor actualizado correctamente.", "Éxito", MessageBoxButtons.OK);
+                    ControlErrores.ManejarActualizar();
                 }
                 else
                 {
@@ -150,7 +155,7 @@ namespace SistemaDeAlarma.views.Sensores
                 if (resultado == "OK")
                 {
                     CargarSensores();
-                    MessageBox.Show("Sensor eliminado correctamente.", "Éxito", MessageBoxButtons.OK);
+                    ControlErrores.ManejarEliminar();
                 }
                 else if (resultado == "Error de restricción de clave foránea")
                 {

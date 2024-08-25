@@ -68,6 +68,12 @@
     <Compile Include="views\Dashboard\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\Eventos\frm_eventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Eventos\frm_eventos.Designer.cs">
+      <DependentUpon>frm_eventos.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\Sensores\frm_sensores.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaDeAlarma.views.Usuarios;
 using SistemaDeAlarma.views.Ubicaciones;
+using SistemaDeAlarma.views.Sensores;
+using SistemaDeAlarma.views.Eventos;
 
 namespace SistemaDeAlarma.views.Dashboard
 {
@@ -40,13 +42,20 @@ namespace SistemaDeAlarma.views.Dashboard
 
         private void sENSORESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_ubicaciones _Ubicaciones = new frm_ubicaciones();
-            _Ubicaciones.ShowDialog();
+            frm_sensores _Sensores = new frm_sensores();
+            _Sensores.ShowDialog();
         }
 
         private void uBICACIONESToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frm_ubicaciones _Ubicaciones = new frm_ubicaciones();
+            _Ubicaciones.ShowDialog();
+        }
 
+        private void eVENTOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_eventos _Eventos = new frm_eventos();
+            _Eventos.ShowDialog();
         }
     }
 }
