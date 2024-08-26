@@ -45,6 +45,7 @@ namespace SistemaDeAlarma.views.Sensores
             cmb_IdUbicacion.DataSource = ubicaciones;
             cmb_IdUbicacion.DisplayMember = "LugarUbicacion";
             cmb_IdUbicacion.ValueMember = "IdUbicacion";
+            cmb_IdUbicacion.SelectedIndex = -1;
         }
 
         private bool ValidarCampos(params TextBox[] cajasDeTexto)

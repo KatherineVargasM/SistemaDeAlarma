@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="config\ConexionBDD.cs" />
     <Compile Include="config\ControlErrores.cs" />
+    <Compile Include="controller\eventosController.cs" />
     <Compile Include="controller\sensoresController.cs" />
     <Compile Include="controller\ubicacionesController.cs" />
     <Compile Include="controller\usuariosController.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\eventosModel.cs" />
     <Compile Include="models\sensoresModel.cs" />
     <Compile Include="models\ubicacionesModel.cs" />
     <Compile Include="models\usuariosModel.cs" />
@@ -107,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="views\Dashboard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Eventos\frm_eventos.resx">
+      <DependentUpon>frm_eventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Sensores\frm_sensores.resx">
       <DependentUpon>frm_sensores.cs</DependentUpon>
