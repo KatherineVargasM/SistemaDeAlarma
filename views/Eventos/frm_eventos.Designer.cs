@@ -51,7 +51,7 @@
             // 
             // btn_Eliminar
             // 
-            this.btn_Eliminar.Location = new System.Drawing.Point(356, 363);
+            this.btn_Eliminar.Location = new System.Drawing.Point(351, 399);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(89, 35);
             this.btn_Eliminar.TabIndex = 37;
@@ -61,7 +61,7 @@
             // 
             // btn_Modificar
             // 
-            this.btn_Modificar.Location = new System.Drawing.Point(261, 363);
+            this.btn_Modificar.Location = new System.Drawing.Point(256, 399);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(89, 35);
             this.btn_Modificar.TabIndex = 36;
@@ -71,7 +71,7 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(356, 322);
+            this.btn_Cancelar.Location = new System.Drawing.Point(351, 358);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(89, 35);
             this.btn_Cancelar.TabIndex = 35;
@@ -81,7 +81,7 @@
             // 
             // btn_Grabar
             // 
-            this.btn_Grabar.Location = new System.Drawing.Point(261, 322);
+            this.btn_Grabar.Location = new System.Drawing.Point(256, 358);
             this.btn_Grabar.Name = "btn_Grabar";
             this.btn_Grabar.Size = new System.Drawing.Size(89, 35);
             this.btn_Grabar.TabIndex = 34;
@@ -113,8 +113,9 @@
             // txt_Descripcion
             // 
             this.txt_Descripcion.Location = new System.Drawing.Point(217, 281);
+            this.txt_Descripcion.Multiline = true;
             this.txt_Descripcion.Name = "txt_Descripcion";
-            this.txt_Descripcion.Size = new System.Drawing.Size(274, 26);
+            this.txt_Descripcion.Size = new System.Drawing.Size(274, 57);
             this.txt_Descripcion.TabIndex = 30;
             // 
             // lst_Eventos
@@ -220,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 426);
+            this.ClientSize = new System.Drawing.Size(883, 458);
             this.Controls.Add(this.cmb_Sensor);
             this.Controls.Add(this.cmb_Usuario);
             this.Controls.Add(this.btn_Eliminar);

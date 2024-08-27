@@ -32,6 +32,7 @@ namespace SistemaDeAlarma
                 lbl_Mensajes.Text = "Llene las cajas de texto con la informacion requerida";
                 lbl_Mensajes.Visible = true;
                 ControlTamanioFormulario();
+                BlanquearCajasDeTexto();
                 return;
             }
 
@@ -50,6 +51,7 @@ namespace SistemaDeAlarma
                     lbl_Mensajes.Text = "El usuario o la contraseña son incorrectos.";
                     lbl_Mensajes.Visible = true;
                     ControlTamanioFormulario();
+                    BlanquearCajasDeTexto();
                 }
             }
             else
@@ -57,6 +59,7 @@ namespace SistemaDeAlarma
                 lbl_Mensajes.Text = "El correo electronico no posee el formato correcto.";
                 lbl_Mensajes.Visible = true;
                 ControlTamanioFormulario();
+                BlanquearCajasDeTexto();
             }
         }
 
@@ -78,6 +81,12 @@ namespace SistemaDeAlarma
             txt_Contrasenia.Text = "";
             txt_Usuario.Text = "";
         }
-    
+
+        private void BlanquearCajasDeTexto()
+        {
+            txt_Usuario.Text = "";
+            txt_Contrasenia.Text = "";
+        }
+
     }
 }
