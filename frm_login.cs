@@ -76,17 +76,16 @@ namespace SistemaDeAlarma
             decimal ancho = frm_login.ActiveForm.Width;
         }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
-        {
-            txt_Contrasenia.Text = "";
-            txt_Usuario.Text = "";
-        }
-
         private void BlanquearCajasDeTexto()
         {
             txt_Usuario.Text = "";
             txt_Contrasenia.Text = "";
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+        }
     }
 }

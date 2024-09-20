@@ -15,7 +15,7 @@ namespace SistemaDeAlarma.config
 
         static ConexionBDD()
         {
-            connectionString = "Server=.;database=SistemaDeAlarma;uid=sa;pwd=corpad17k";
+            connectionString = "Server=.;database=SistemaAlarmaHumo;uid=sa;pwd=corpad17k";
         }
 
         public static SqlConnection GetConnection()

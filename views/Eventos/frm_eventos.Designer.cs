@@ -98,6 +98,7 @@
             // 
             // txt_Nivel
             // 
+            this.txt_Nivel.BackColor = System.Drawing.Color.Linen;
             this.txt_Nivel.Location = new System.Drawing.Point(217, 243);
             this.txt_Nivel.Name = "txt_Nivel";
             this.txt_Nivel.Size = new System.Drawing.Size(274, 26);
@@ -105,6 +106,7 @@
             // 
             // txt_Tipo
             // 
+            this.txt_Tipo.BackColor = System.Drawing.Color.Linen;
             this.txt_Tipo.Location = new System.Drawing.Point(217, 202);
             this.txt_Tipo.Name = "txt_Tipo";
             this.txt_Tipo.Size = new System.Drawing.Size(274, 26);
@@ -112,6 +114,7 @@
             // 
             // txt_Descripcion
             // 
+            this.txt_Descripcion.BackColor = System.Drawing.Color.Linen;
             this.txt_Descripcion.Location = new System.Drawing.Point(217, 281);
             this.txt_Descripcion.Multiline = true;
             this.txt_Descripcion.Name = "txt_Descripcion";
@@ -120,6 +123,7 @@
             // 
             // lst_Eventos
             // 
+            this.lst_Eventos.BackColor = System.Drawing.Color.Linen;
             this.lst_Eventos.FormattingEnabled = true;
             this.lst_Eventos.ItemHeight = 20;
             this.lst_Eventos.Location = new System.Drawing.Point(518, 88);
@@ -131,6 +135,7 @@
             // lbl_Lista
             // 
             this.lbl_Lista.AutoSize = true;
+            this.lbl_Lista.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_Lista.Location = new System.Drawing.Point(514, 65);
             this.lbl_Lista.Name = "lbl_Lista";
             this.lbl_Lista.Size = new System.Drawing.Size(131, 20);
@@ -140,6 +145,7 @@
             // lbl_Descipcion
             // 
             this.lbl_Descipcion.AutoSize = true;
+            this.lbl_Descipcion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_Descipcion.Location = new System.Drawing.Point(115, 281);
             this.lbl_Descipcion.Name = "lbl_Descipcion";
             this.lbl_Descipcion.Size = new System.Drawing.Size(96, 20);
@@ -149,6 +155,7 @@
             // lbl_Nivel
             // 
             this.lbl_Nivel.AutoSize = true;
+            this.lbl_Nivel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_Nivel.Location = new System.Drawing.Point(89, 243);
             this.lbl_Nivel.Name = "lbl_Nivel";
             this.lbl_Nivel.Size = new System.Drawing.Size(122, 20);
@@ -158,6 +165,7 @@
             // lbl_Tipo
             // 
             this.lbl_Tipo.AutoSize = true;
+            this.lbl_Tipo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_Tipo.Location = new System.Drawing.Point(92, 202);
             this.lbl_Tipo.Name = "lbl_Tipo";
             this.lbl_Tipo.Size = new System.Drawing.Size(119, 20);
@@ -167,6 +175,7 @@
             // lbl_Fecha
             // 
             this.lbl_Fecha.AutoSize = true;
+            this.lbl_Fecha.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_Fecha.Location = new System.Drawing.Point(77, 164);
             this.lbl_Fecha.Name = "lbl_Fecha";
             this.lbl_Fecha.Size = new System.Drawing.Size(134, 20);
@@ -176,6 +185,7 @@
             // lbl_IdSensor
             // 
             this.lbl_IdSensor.AutoSize = true;
+            this.lbl_IdSensor.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_IdSensor.Location = new System.Drawing.Point(121, 127);
             this.lbl_IdSensor.Name = "lbl_IdSensor";
             this.lbl_IdSensor.Size = new System.Drawing.Size(90, 20);
@@ -185,6 +195,7 @@
             // lbl_IdUsuario
             // 
             this.lbl_IdUsuario.AutoSize = true;
+            this.lbl_IdUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_IdUsuario.Location = new System.Drawing.Point(143, 86);
             this.lbl_IdUsuario.Name = "lbl_IdUsuario";
             this.lbl_IdUsuario.Size = new System.Drawing.Size(68, 20);
@@ -194,6 +205,7 @@
             // lbl_Titulo
             // 
             this.lbl_Titulo.AutoSize = true;
+            this.lbl_Titulo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.Location = new System.Drawing.Point(226, 40);
             this.lbl_Titulo.Name = "lbl_Titulo";
@@ -221,6 +233,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MistyRose;
+            this.BackgroundImage = global::SistemaDeAlarma.Properties.Resources.Logo_Negocio_Floral_Beige;
             this.ClientSize = new System.Drawing.Size(883, 458);
             this.Controls.Add(this.cmb_Sensor);
             this.Controls.Add(this.cmb_Usuario);
