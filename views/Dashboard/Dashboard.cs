@@ -14,6 +14,7 @@ using SistemaDeAlarma.views.Eventos;
 
 namespace SistemaDeAlarma.views.Dashboard
 {
+
     public partial class Dashboard : Form
     {
         public Dashboard()
@@ -27,7 +28,7 @@ namespace SistemaDeAlarma.views.Dashboard
 
 
             picture.Left = (ancho - picture.Width) / 2;
-            picture.Top = (alto - picture.Width) / 2;
+            picture.Top = (alto - picture.Height) / 2;
         }
         private void Dashboard_SizeChanged(object sender, EventArgs e)
         {
@@ -56,6 +57,16 @@ namespace SistemaDeAlarma.views.Dashboard
         {
             frm_eventos _Eventos = new frm_eventos();
             _Eventos.ShowDialog();
+        }
+
+        private void picture_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
