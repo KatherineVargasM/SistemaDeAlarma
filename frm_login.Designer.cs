@@ -31,7 +31,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl_Mensajes = new System.Windows.Forms.Label();
             this.txt_Contrasenia = new System.Windows.Forms.TextBox();
             this.txt_Usuario = new System.Windows.Forms.TextBox();
             this.btn_Aceptar = new System.Windows.Forms.Button();
@@ -76,15 +75,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Contraseña:";
             // 
-            // lbl_Mensajes
-            // 
-            this.lbl_Mensajes.AutoSize = true;
-            this.lbl_Mensajes.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Mensajes.Location = new System.Drawing.Point(112, 403);
-            this.lbl_Mensajes.Name = "lbl_Mensajes";
-            this.lbl_Mensajes.Size = new System.Drawing.Size(0, 20);
-            this.lbl_Mensajes.TabIndex = 4;
-            // 
             // txt_Contrasenia
             // 
             this.txt_Contrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -120,18 +110,23 @@
             this.btn_Aceptar.Text = "Aceptar";
             this.btn_Aceptar.UseVisualStyleBackColor = false;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
+            this.btn_Aceptar.MouseEnter += new System.EventHandler(this.btn_Aceptar_MouseEnter);
+            this.btn_Aceptar.MouseLeave += new System.EventHandler(this.btn_Aceptar_MouseLeave);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Peru;
-            this.label1.Location = new System.Drawing.Point(129, 370);
+            this.label1.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.label1.Location = new System.Drawing.Point(129, 372);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Forgot password?";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
             // label5
             // 
@@ -139,7 +134,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Peru;
-            this.label5.Location = new System.Drawing.Point(265, 370);
+            this.label5.Location = new System.Drawing.Point(265, 372);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 17);
             this.label5.TabIndex = 10;
@@ -150,12 +145,15 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Peru;
-            this.label6.Location = new System.Drawing.Point(294, 370);
+            this.label6.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.label6.Location = new System.Drawing.Point(285, 372);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "Sign up";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.MouseEnter += new System.EventHandler(this.label6_MouseEnter);
+            this.label6.MouseLeave += new System.EventHandler(this.label6_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -183,7 +181,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaDeAlarma.Properties.Resources.Logo_Negocio_Floral_Beige__1_;
-            this.ClientSize = new System.Drawing.Size(488, 439);
+            this.ClientSize = new System.Drawing.Size(488, 419);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
@@ -192,7 +190,6 @@
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.txt_Usuario);
             this.Controls.Add(this.txt_Contrasenia);
-            this.Controls.Add(this.lbl_Mensajes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -202,6 +199,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frm_login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -213,7 +212,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbl_Mensajes;
         private System.Windows.Forms.TextBox txt_Contrasenia;
         private System.Windows.Forms.TextBox txt_Usuario;
         private System.Windows.Forms.Button btn_Aceptar;
