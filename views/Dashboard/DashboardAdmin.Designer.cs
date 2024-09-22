@@ -45,11 +45,12 @@
             this.gestionarAlarmasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeAlertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lecturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarLecturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeLecturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.picture = new System.Windows.Forms.PictureBox();
-            this.gestionarLecturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
@@ -202,22 +203,30 @@
             this.lecturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionarLecturasToolStripMenuItem,
             this.listaDeLecturasToolStripMenuItem,
+            this.notificaciónToolStripMenuItem,
             this.reportesToolStripMenuItem4});
             this.lecturasToolStripMenuItem.Name = "lecturasToolStripMenuItem";
             this.lecturasToolStripMenuItem.Size = new System.Drawing.Size(222, 32);
             this.lecturasToolStripMenuItem.Text = "Lecturas";
             this.lecturasToolStripMenuItem.Click += new System.EventHandler(this.lecturasToolStripMenuItem_Click);
             // 
+            // gestionarLecturasToolStripMenuItem
+            // 
+            this.gestionarLecturasToolStripMenuItem.Name = "gestionarLecturasToolStripMenuItem";
+            this.gestionarLecturasToolStripMenuItem.Size = new System.Drawing.Size(233, 32);
+            this.gestionarLecturasToolStripMenuItem.Text = "Gestionar Lecturas";
+            this.gestionarLecturasToolStripMenuItem.Click += new System.EventHandler(this.gestionarLecturasToolStripMenuItem_Click);
+            // 
             // listaDeLecturasToolStripMenuItem
             // 
             this.listaDeLecturasToolStripMenuItem.Name = "listaDeLecturasToolStripMenuItem";
-            this.listaDeLecturasToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
+            this.listaDeLecturasToolStripMenuItem.Size = new System.Drawing.Size(233, 32);
             this.listaDeLecturasToolStripMenuItem.Text = "Lista de Lecturas";
             // 
             // reportesToolStripMenuItem4
             // 
             this.reportesToolStripMenuItem4.Name = "reportesToolStripMenuItem4";
-            this.reportesToolStripMenuItem4.Size = new System.Drawing.Size(220, 32);
+            this.reportesToolStripMenuItem4.Size = new System.Drawing.Size(233, 32);
             this.reportesToolStripMenuItem4.Text = "Reportes";
             // 
             // reportesToolStripMenuItem5
@@ -238,12 +247,12 @@
             this.picture.TabStop = false;
             this.picture.Click += new System.EventHandler(this.picture_Click);
             // 
-            // gestionarLecturasToolStripMenuItem
+            // notificaciónToolStripMenuItem
             // 
-            this.gestionarLecturasToolStripMenuItem.Name = "gestionarLecturasToolStripMenuItem";
-            this.gestionarLecturasToolStripMenuItem.Size = new System.Drawing.Size(233, 32);
-            this.gestionarLecturasToolStripMenuItem.Text = "Gestionar Lecturas";
-            this.gestionarLecturasToolStripMenuItem.Click += new System.EventHandler(this.gestionarLecturasToolStripMenuItem_Click);
+            this.notificaciónToolStripMenuItem.Name = "notificaciónToolStripMenuItem";
+            this.notificaciónToolStripMenuItem.Size = new System.Drawing.Size(233, 32);
+            this.notificaciónToolStripMenuItem.Text = "Notificación";
+            this.notificaciónToolStripMenuItem.Click += new System.EventHandler(this.notificaciónToolStripMenuItem_Click);
             // 
             // DashboardAdmin
             // 
@@ -297,5 +306,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem gestionarLecturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem notificaciónToolStripMenuItem;
     }
 }

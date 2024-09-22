@@ -210,5 +210,10 @@
   <ItemGroup>
     <None Include="Resources\12.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Y2meta.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
