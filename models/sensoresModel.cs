@@ -12,6 +12,7 @@ namespace SistemaDeAlarma.models
     {
         public int IdSensor { get; set; }
         public int IdUbicacion { get; set; }
+        public string LugarUbicacion { get; set; }
         public string TipoSensor { get; set; }
         public DateTime FechaInstalacionSensor { get; set; }
         public string EstadoSensor { get; set; }
@@ -177,7 +178,9 @@ namespace SistemaDeAlarma.models
             {
                 using (var conexion = ConexionBDD.GetConnection())
                 {
-                    var consulta = "SELECT * FROM sensores";
+                    var consulta = @"SELECT s.ID_SENSOR, s.ID_UBICACION, s.tipo_sensor, s.fecha_instalacion_sensor, s.estado_sensor, u.lugar_ubicacion
+                                    FROM sensores s
+                                    INNER JOIN ubicaciones u ON s.ID_UBICACION = u.ID_UBICACION";
 
                     using (var comando = new SqlCommand(consulta, conexion))
                     {
@@ -189,6 +192,7 @@ namespace SistemaDeAlarma.models
                                 {
                                     IdSensor = Convert.ToInt32(lector["ID_SENSOR"]),
                                     IdUbicacion = Convert.ToInt32(lector["ID_UBICACION"]),
+                                    LugarUbicacion = lector["lugar_ubicacion"].ToString(),
                                     TipoSensor = lector["tipo_sensor"].ToString(),
                                     FechaInstalacionSensor = Convert.ToDateTime(lector["fecha_instalacion_sensor"]),
                                     EstadoSensor = lector["estado_sensor"].ToString()
@@ -209,5 +213,6 @@ namespace SistemaDeAlarma.models
 
             return sensores;
         }
+
     }
 }

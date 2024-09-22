@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_lecturas));
-            this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.btn_Grabar = new System.Windows.Forms.Button();
             this.txt_abundancia = new System.Windows.Forms.TextBox();
@@ -41,29 +40,15 @@
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btn_Modificar
-            // 
-            this.btn_Modificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Modificar.BackgroundImage")));
-            this.btn_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Modificar.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btn_Modificar.Location = new System.Drawing.Point(327, 198);
-            this.btn_Modificar.Name = "btn_Modificar";
-            this.btn_Modificar.Size = new System.Drawing.Size(92, 28);
-            this.btn_Modificar.TabIndex = 42;
-            this.btn_Modificar.Text = "Modificar";
-            this.btn_Modificar.UseVisualStyleBackColor = true;
-            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
-            // 
             // btn_Cancelar
             // 
             this.btn_Cancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Cancelar.BackgroundImage")));
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btn_Cancelar.Location = new System.Drawing.Point(425, 198);
+            this.btn_Cancelar.Location = new System.Drawing.Point(380, 198);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(91, 28);
+            this.btn_Cancelar.Size = new System.Drawing.Size(121, 28);
             this.btn_Cancelar.TabIndex = 41;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
@@ -75,9 +60,9 @@
             this.btn_Grabar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Grabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Grabar.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btn_Grabar.Location = new System.Drawing.Point(242, 198);
+            this.btn_Grabar.Location = new System.Drawing.Point(253, 198);
             this.btn_Grabar.Name = "btn_Grabar";
-            this.btn_Grabar.Size = new System.Drawing.Size(79, 28);
+            this.btn_Grabar.Size = new System.Drawing.Size(121, 28);
             this.btn_Grabar.TabIndex = 40;
             this.btn_Grabar.Text = "Grabar";
             this.btn_Grabar.UseVisualStyleBackColor = true;
@@ -166,7 +151,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaDeAlarma.Properties.Resources.Logo_Negocio_Floral_Beige;
             this.ClientSize = new System.Drawing.Size(830, 280);
-            this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Grabar);
             this.Controls.Add(this.txt_abundancia);
@@ -191,8 +175,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_Modificar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Button btn_Grabar;
         private System.Windows.Forms.TextBox txt_abundancia;

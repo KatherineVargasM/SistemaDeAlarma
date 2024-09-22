@@ -52,7 +52,7 @@ namespace SistemaDeAlarma.models
                                     IdAlerta = Convert.ToInt32(lector["ID_ALERTA"]),
                                     IdUsuario = Convert.ToInt32(lector["ID_USUARIO"]),
                                     IdSensor = Convert.ToInt32(lector["ID_SENSOR"]),
-                                    FechaAlerta = Convert.ToDateTime(lector["fecha_alerta"]),
+                                    FechaAlerta = Convert.ToDateTime(lector["fecha_hora_alerta"]),
                                     TipoAlerta = lector["tipo_alerta"].ToString(),
                                     NivelAlarmaAlerta = lector["nivel_alarma_alerta"].ToString(),
                                     DescripcionAlerta = lector["descripcion_alerta"].ToString()
@@ -73,16 +73,15 @@ namespace SistemaDeAlarma.models
             return null;
         }
 
-        public static string Actualizar(alertasModel alerta)
+        public static bool Actualizar(alertasModel alerta)
         {
             try
             {
                 using (var conexion = ConexionBDD.GetConnection())
                 {
                     var consulta = "UPDATE alertas SET ID_USUARIO = @IdUsuario, ID_SENSOR = @IdSensor, ID_LECTURA = @IdLectura, " +
-                                    "fecha_hora_alerta = @FechaAlerta, tipo_alerta = @TipoAlerta, nivel_alarma_alerta = @NivelAlarmaAlerta, " +
-                                    "descripcion_alerta = @DescripcionAlerta WHERE ID_ALERTA = @IdAlerta";
-
+                                   "fecha_hora_alerta = @FechaAlerta, tipo_alerta = @TipoAlerta, nivel_alarma_alerta = @NivelAlarmaAlerta, " +
+                                   "descripcion_alerta = @DescripcionAlerta WHERE ID_ALERTA = @IdAlerta";
 
                     using (var comando = new SqlCommand(consulta, conexion))
                     {
@@ -90,28 +89,28 @@ namespace SistemaDeAlarma.models
                         comando.Parameters.AddWithValue("@IdUsuario", alerta.IdUsuario);
                         comando.Parameters.AddWithValue("@IdSensor", alerta.IdSensor);
                         comando.Parameters.AddWithValue("@IdLectura", alerta.IdLectura);
-                        comando.Parameters.AddWithValue("@IdLectura", alerta.IdLectura);
                         comando.Parameters.AddWithValue("@FechaAlerta", alerta.FechaAlerta);
                         comando.Parameters.AddWithValue("@TipoAlerta", alerta.TipoAlerta);
                         comando.Parameters.AddWithValue("@NivelAlarmaAlerta", alerta.NivelAlarmaAlerta);
                         comando.Parameters.AddWithValue("@DescripcionAlerta", alerta.DescripcionAlerta);
 
-                        comando.ExecuteNonQuery();
+                        var rowsAffected = comando.ExecuteNonQuery();
+                        return rowsAffected > 0;
                     }
                 }
-                return "OK";
             }
             catch (SqlException ex)
             {
                 ControlErrores.ManejarErrorSql(ex, "Error al actualizar la alerta.");
-                return "Error SQL";
+                return false;
             }
             catch (Exception ex)
             {
                 ControlErrores.ManejarErrorGeneral(ex, "Error al actualizar la alerta.");
-                return "Error";
+                return false;
             }
         }
+
 
         public static string Eliminar(int idAlerta)
         {

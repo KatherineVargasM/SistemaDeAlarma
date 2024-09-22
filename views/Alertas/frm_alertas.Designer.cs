@@ -53,7 +53,7 @@
             // 
             // dtp_Fecha
             // 
-            this.dtp_Fecha.Location = new System.Drawing.Point(219, 210);
+            this.dtp_Fecha.Location = new System.Drawing.Point(240, 208);
             this.dtp_Fecha.Name = "dtp_Fecha";
             this.dtp_Fecha.Size = new System.Drawing.Size(274, 26);
             this.dtp_Fecha.TabIndex = 33;
@@ -62,7 +62,7 @@
             // 
             this.txt_Nivel.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Nivel.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.txt_Nivel.Location = new System.Drawing.Point(219, 289);
+            this.txt_Nivel.Location = new System.Drawing.Point(240, 287);
             this.txt_Nivel.Name = "txt_Nivel";
             this.txt_Nivel.Size = new System.Drawing.Size(274, 26);
             this.txt_Nivel.TabIndex = 32;
@@ -71,7 +71,7 @@
             // 
             this.txt_Tipo.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Tipo.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.txt_Tipo.Location = new System.Drawing.Point(219, 248);
+            this.txt_Tipo.Location = new System.Drawing.Point(240, 246);
             this.txt_Tipo.Name = "txt_Tipo";
             this.txt_Tipo.Size = new System.Drawing.Size(274, 26);
             this.txt_Tipo.TabIndex = 31;
@@ -80,7 +80,7 @@
             // 
             this.txt_Descripcion.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Descripcion.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.txt_Descripcion.Location = new System.Drawing.Point(219, 327);
+            this.txt_Descripcion.Location = new System.Drawing.Point(240, 325);
             this.txt_Descripcion.Multiline = true;
             this.txt_Descripcion.Name = "txt_Descripcion";
             this.txt_Descripcion.Size = new System.Drawing.Size(274, 57);
@@ -92,7 +92,7 @@
             this.lst_Alertas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lst_Alertas.FormattingEnabled = true;
             this.lst_Alertas.ItemHeight = 20;
-            this.lst_Alertas.Location = new System.Drawing.Point(520, 141);
+            this.lst_Alertas.Location = new System.Drawing.Point(541, 139);
             this.lst_Alertas.Name = "lst_Alertas";
             this.lst_Alertas.Size = new System.Drawing.Size(209, 240);
             this.lst_Alertas.TabIndex = 27;
@@ -104,11 +104,11 @@
             this.lbl_Lista.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Lista.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Lista.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbl_Lista.Location = new System.Drawing.Point(515, 105);
+            this.lbl_Lista.Location = new System.Drawing.Point(536, 103);
             this.lbl_Lista.Name = "lbl_Lista";
-            this.lbl_Lista.Size = new System.Drawing.Size(142, 28);
+            this.lbl_Lista.Size = new System.Drawing.Size(163, 28);
             this.lbl_Lista.TabIndex = 26;
-            this.lbl_Lista.Text = "Lista de Alertas:";
+            this.lbl_Lista.Text = "Alertas por Fechas:";
             // 
             // lbl_Descipcion
             // 
@@ -116,7 +116,7 @@
             this.lbl_Descipcion.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Descipcion.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Descipcion.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbl_Descipcion.Location = new System.Drawing.Point(104, 326);
+            this.lbl_Descipcion.Location = new System.Drawing.Point(128, 324);
             this.lbl_Descipcion.Name = "lbl_Descipcion";
             this.lbl_Descipcion.Size = new System.Drawing.Size(109, 28);
             this.lbl_Descipcion.TabIndex = 25;
@@ -128,11 +128,11 @@
             this.lbl_Nivel.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Nivel.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Nivel.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbl_Nivel.Location = new System.Drawing.Point(69, 286);
+            this.lbl_Nivel.Location = new System.Drawing.Point(100, 285);
             this.lbl_Nivel.Name = "lbl_Nivel";
-            this.lbl_Nivel.Size = new System.Drawing.Size(147, 28);
+            this.lbl_Nivel.Size = new System.Drawing.Size(137, 28);
             this.lbl_Nivel.TabIndex = 24;
-            this.lbl_Nivel.Text = "Nivel de Alarma:";
+            this.lbl_Nivel.Text = "Nivel de Alerta:";
             // 
             // lbl_Tipo
             // 
@@ -140,7 +140,7 @@
             this.lbl_Tipo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Tipo.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Tipo.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbl_Tipo.Location = new System.Drawing.Point(78, 246);
+            this.lbl_Tipo.Location = new System.Drawing.Point(99, 244);
             this.lbl_Tipo.Name = "lbl_Tipo";
             this.lbl_Tipo.Size = new System.Drawing.Size(138, 28);
             this.lbl_Tipo.TabIndex = 23;
@@ -152,11 +152,11 @@
             this.lbl_Fecha.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Fecha.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Fecha.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbl_Fecha.Location = new System.Drawing.Point(69, 208);
+            this.lbl_Fecha.Location = new System.Drawing.Point(77, 206);
             this.lbl_Fecha.Name = "lbl_Fecha";
-            this.lbl_Fecha.Size = new System.Drawing.Size(147, 28);
+            this.lbl_Fecha.Size = new System.Drawing.Size(157, 28);
             this.lbl_Fecha.TabIndex = 22;
-            this.lbl_Fecha.Text = "Fecha de Evento:";
+            this.lbl_Fecha.Text = "Fecha de Registro:";
             // 
             // lbl_IdSensor
             // 
@@ -164,11 +164,11 @@
             this.lbl_IdSensor.BackColor = System.Drawing.Color.Transparent;
             this.lbl_IdSensor.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IdSensor.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbl_IdSensor.Location = new System.Drawing.Point(121, 142);
+            this.lbl_IdSensor.Location = new System.Drawing.Point(52, 140);
             this.lbl_IdSensor.Name = "lbl_IdSensor";
-            this.lbl_IdSensor.Size = new System.Drawing.Size(95, 28);
+            this.lbl_IdSensor.Size = new System.Drawing.Size(182, 28);
             this.lbl_IdSensor.TabIndex = 21;
-            this.lbl_IdSensor.Text = "ID_Sensor:";
+            this.lbl_IdSensor.Text = "Ubicación del Sensor:";
             // 
             // lbl_IdUsuario
             // 
@@ -176,7 +176,7 @@
             this.lbl_IdUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lbl_IdUsuario.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IdUsuario.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbl_IdUsuario.Location = new System.Drawing.Point(139, 105);
+            this.lbl_IdUsuario.Location = new System.Drawing.Point(160, 103);
             this.lbl_IdUsuario.Name = "lbl_IdUsuario";
             this.lbl_IdUsuario.Size = new System.Drawing.Size(77, 28);
             this.lbl_IdUsuario.TabIndex = 20;
@@ -188,7 +188,7 @@
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Titulo.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbl_Titulo.Location = new System.Drawing.Point(211, 43);
+            this.lbl_Titulo.Location = new System.Drawing.Point(232, 41);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(279, 47);
             this.lbl_Titulo.TabIndex = 19;
@@ -199,7 +199,7 @@
             // 
             this.cmb_Usuario.ForeColor = System.Drawing.Color.SaddleBrown;
             this.cmb_Usuario.FormattingEnabled = true;
-            this.cmb_Usuario.Location = new System.Drawing.Point(219, 106);
+            this.cmb_Usuario.Location = new System.Drawing.Point(240, 104);
             this.cmb_Usuario.Name = "cmb_Usuario";
             this.cmb_Usuario.Size = new System.Drawing.Size(274, 28);
             this.cmb_Usuario.TabIndex = 38;
@@ -208,7 +208,7 @@
             // 
             this.cmb_Sensor.ForeColor = System.Drawing.Color.SaddleBrown;
             this.cmb_Sensor.FormattingEnabled = true;
-            this.cmb_Sensor.Location = new System.Drawing.Point(219, 142);
+            this.cmb_Sensor.Location = new System.Drawing.Point(240, 140);
             this.cmb_Sensor.Name = "cmb_Sensor";
             this.cmb_Sensor.Size = new System.Drawing.Size(274, 28);
             this.cmb_Sensor.TabIndex = 39;
@@ -219,7 +219,7 @@
             this.btn_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Modificar.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btn_Modificar.Location = new System.Drawing.Point(304, 404);
+            this.btn_Modificar.Location = new System.Drawing.Point(325, 402);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(92, 28);
             this.btn_Modificar.TabIndex = 42;
@@ -233,12 +233,13 @@
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btn_Cancelar.Location = new System.Drawing.Point(402, 404);
+            this.btn_Cancelar.Location = new System.Drawing.Point(423, 402);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(91, 28);
             this.btn_Cancelar.TabIndex = 41;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // btn_Grabar
             // 
@@ -246,7 +247,7 @@
             this.btn_Grabar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Grabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Grabar.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btn_Grabar.Location = new System.Drawing.Point(219, 404);
+            this.btn_Grabar.Location = new System.Drawing.Point(240, 402);
             this.btn_Grabar.Name = "btn_Grabar";
             this.btn_Grabar.Size = new System.Drawing.Size(79, 28);
             this.btn_Grabar.TabIndex = 40;
@@ -258,7 +259,7 @@
             // 
             this.cmb_Lecturas.ForeColor = System.Drawing.Color.SaddleBrown;
             this.cmb_Lecturas.FormattingEnabled = true;
-            this.cmb_Lecturas.Location = new System.Drawing.Point(219, 176);
+            this.cmb_Lecturas.Location = new System.Drawing.Point(240, 174);
             this.cmb_Lecturas.Name = "cmb_Lecturas";
             this.cmb_Lecturas.Size = new System.Drawing.Size(274, 28);
             this.cmb_Lecturas.TabIndex = 44;
@@ -269,11 +270,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label1.Location = new System.Drawing.Point(114, 176);
+            this.label1.Location = new System.Drawing.Point(52, 173);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 28);
+            this.label1.Size = new System.Drawing.Size(182, 28);
             this.label1.TabIndex = 43;
-            this.label1.Text = "ID_Lectura:";
+            this.label1.Text = "Lecturas Registradas:";
             // 
             // frm_alertas
             // 
@@ -303,11 +304,12 @@
             this.Controls.Add(this.lbl_IdUsuario);
             this.Controls.Add(this.lbl_Titulo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_alertas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ALERTAS";
             this.Load += new System.EventHandler(this.frm_alertas_Load);
             this.ResumeLayout(false);

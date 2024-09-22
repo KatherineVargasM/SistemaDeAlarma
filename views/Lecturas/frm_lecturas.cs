@@ -31,8 +31,9 @@ namespace SistemaDeAlarma.views.Lecturas
         {
             var lecturas = lecturasController.ObtenerTodasLasLecturas();
             lst_lecturas.DataSource = lecturas;
-            lst_lecturas.DisplayMember = "ID_LECTURA";
+            lst_lecturas.DisplayMember = "FechaLectura";
             lst_lecturas.ValueMember = "ID_LECTURA";
+            lst_lecturas.SelectedIndex = -1;
         }
 
         private bool ValidarCampos()

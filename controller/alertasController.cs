@@ -14,7 +14,7 @@ namespace SistemaDeAlarma.controller
             return alertasModel.Insertar(alerta);
         }
 
-        public string ActualizarAlerta(alertasModel alerta)
+        public bool ActualizarAlerta(alertasModel alerta)
         {
             return alertasModel.Actualizar(alerta);
         }
