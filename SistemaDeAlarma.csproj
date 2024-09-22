@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="config\ConexionBDD.cs" />
+    <Compile Include="config\ConfiguracionProyecto.cs" />
     <Compile Include="config\ControlErrores.cs" />
-    <Compile Include="controller\eventosController.cs" />
+    <Compile Include="controller\alertasController.cs" />
+    <Compile Include="controller\lecturasController.cs" />
     <Compile Include="controller\sensoresController.cs" />
     <Compile Include="controller\ubicacionesController.cs" />
     <Compile Include="controller\usuariosController.cs" />
@@ -58,23 +60,42 @@
     <Compile Include="frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="models\eventosModel.cs" />
+    <Compile Include="models\alertasModel.cs" />
+    <Compile Include="models\lecturasModel.cs" />
     <Compile Include="models\sensoresModel.cs" />
     <Compile Include="models\ubicacionesModel.cs" />
     <Compile Include="models\usuariosModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="views\Dashboard\Dashboard.cs">
+    <Compile Include="views\Dashboard\DashboardResidente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Dashboard\Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <Compile Include="views\Dashboard\DashboardResidente.Designer.cs">
+      <DependentUpon>DashboardResidente.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\Eventos\frm_eventos.cs">
+    <Compile Include="views\Dashboard\DashboardGuardia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Eventos\frm_eventos.Designer.cs">
-      <DependentUpon>frm_eventos.cs</DependentUpon>
+    <Compile Include="views\Dashboard\DashboardGuardia.Designer.cs">
+      <DependentUpon>DashboardGuardia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Dashboard\DashboardAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Dashboard\DashboardAdmin.Designer.cs">
+      <DependentUpon>DashboardAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Alertas\frm_alertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Alertas\frm_alertas.Designer.cs">
+      <DependentUpon>frm_alertas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Lecturas\frm_lecturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Lecturas\frm_lecturas.Designer.cs">
+      <DependentUpon>frm_lecturas.cs</DependentUpon>
     </Compile>
     <Compile Include="views\Login\frm_loginContrasenia.cs">
       <SubType>Form</SubType>
@@ -125,11 +146,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="views\Dashboard\Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="views\Dashboard\DashboardAdmin.resx">
+      <DependentUpon>DashboardAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Eventos\frm_eventos.resx">
-      <DependentUpon>frm_eventos.cs</DependentUpon>
+    <EmbeddedResource Include="views\Alertas\frm_alertas.resx">
+      <DependentUpon>frm_alertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Lecturas\frm_lecturas.resx">
+      <DependentUpon>frm_lecturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Login\frm_loginContrasenia.resx">
       <DependentUpon>frm_loginContrasenia.cs</DependentUpon>

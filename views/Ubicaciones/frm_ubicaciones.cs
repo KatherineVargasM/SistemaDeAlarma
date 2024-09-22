@@ -48,7 +48,28 @@ namespace SistemaDeAlarma.views.Ubicaciones
             return true;
         }
 
-        private void btn_Grabar_Click(object sender, EventArgs e)
+        private void lst_Ubicaciones_DoubleClick(object sender, EventArgs e)
+        {
+            if (lst_Ubicaciones.SelectedValue != null)
+            {
+                var ubicacion = ubicacionesController.ObtenerUbicacionPorId(Convert.ToInt32(lst_Ubicaciones.SelectedValue));
+                if (ubicacion != null)
+                {
+                    txt_Lugar.Text = ubicacion.LugarUbicacion;
+                    txt_Descripcion.Text = ubicacion.DescripcionUbicacion;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró la ubicación seleccionada.", "Error", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un ítem de la lista.", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btn_Grabar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -81,13 +102,7 @@ namespace SistemaDeAlarma.views.Ubicaciones
             }
         }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
-        {
-            txt_Lugar.Clear();
-            txt_Descripcion.Clear();
-        }
-
-        private void btn_Modificar_Click(object sender, EventArgs e)
+        private void btn_Modificar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -121,58 +136,10 @@ namespace SistemaDeAlarma.views.Ubicaciones
             }
         }
 
-        private void btn_Eliminar_Click(object sender, EventArgs e)
+        private void btn_Cancelar_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                if (lst_Ubicaciones.SelectedItem == null)
-                {
-                    MessageBox.Show("Seleccione una ubicación de la lista para eliminar.", "Error", MessageBoxButtons.OK);
-                    return;
-                }
-
-                var idUbicacion = Convert.ToInt32(lst_Ubicaciones.SelectedValue);
-                var resultado = ubicacionesController.EliminarUbicacion(idUbicacion);
-
-                if (resultado == "OK")
-                {
-                    CargarUbicaciones();
-                    ControlErrores.ManejarEliminar();
-                }
-                else if (resultado == "Error de restricción de clave foranea")
-                {
-                    MessageBox.Show("No se puede eliminar la ubicación debido a restricciones de clave foránea en la base de datos.", "Error de Eliminación", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo eliminar la ubicación.", "Error", MessageBoxButtons.OK);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al eliminar la ubicación: {ex.Message}", "Error", MessageBoxButtons.OK);
-            }
-        }
-
-        private void lst_Ubicaciones_DoubleClick(object sender, EventArgs e)
-        {
-            if (lst_Ubicaciones.SelectedValue != null)
-            {
-                var ubicacion = ubicacionesController.ObtenerUbicacionPorId(Convert.ToInt32(lst_Ubicaciones.SelectedValue));
-                if (ubicacion != null)
-                {
-                    txt_Lugar.Text = ubicacion.LugarUbicacion;
-                    txt_Descripcion.Text = ubicacion.DescripcionUbicacion;
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró la ubicación seleccionada.", "Error", MessageBoxButtons.OK);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un ítem de la lista.", "Error", MessageBoxButtons.OK);
-            }
+            txt_Lugar.Clear();
+            txt_Descripcion.Clear();
         }
     }
 }

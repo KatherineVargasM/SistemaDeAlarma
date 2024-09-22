@@ -17,11 +17,6 @@ namespace SistemaDeAlarma
 {
     public partial class frm_login : Form
     {
-        private Dictionary<string, string> usuarios = new Dictionary<string, string>
-        {
-            { "juancarlospacas@gmail.com", "12345" },
-            { "luisrodrigoparrales@gmail.com", "12345" }
-        };
 
         public frm_login()
         {
@@ -30,47 +25,36 @@ namespace SistemaDeAlarma
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
-            if (txt_Usuario.Text == "" || txt_Contrasenia.Text == "")
+            string usuario = txt_Usuario.Text.Trim();
+            string contrasena = txt_Contrasenia.Text.Trim();
+
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasena))
             {
-                MessageBox.Show("Llene las cajas de texto con la informacion requerida");
-                ControlTamanioFormulario();
+                MessageBox.Show("Por favor, ingrese su usuario y contraseña.", "Información requerida", MessageBoxButtons.OK);
                 BlanquearCajasDeTexto();
                 return;
             }
 
-            if (ValidarEmail(txt_Usuario.Text))
+            if (!ValidarEmail(usuario))
             {
-                if (usuarios.ContainsKey(txt_Usuario.Text) && usuarios[txt_Usuario.Text] == txt_Contrasenia.Text)
-                {
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    if (AutenticarDesdeBaseDeDatos(txt_Usuario.Text, txt_Contrasenia.Text))
-                    {
-                        Dashboard dashboard = new Dashboard();
-                        dashboard.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("El usuario o la contraseña son incorrectos.");
-                        ControlTamanioFormulario();
-                        BlanquearCajasDeTexto();
-                    }
-                }
+                MessageBox.Show("El correo electrónico no posee el formato correcto.", "Formato inválido", MessageBoxButtons.OK);
+                BlanquearCajasDeTexto();
+                return;
+            }
+
+            if (AutenticarDesdeBaseDeDatos(usuario, contrasena))
+            {
+                RedirigirAlDashboard();
             }
             else
             {
-                MessageBox.Show("El correo electronico no posee el formato correcto.");
-                ControlTamanioFormulario();
+                MessageBox.Show("El usuario o la contraseña son incorrectos.", "Error", MessageBoxButtons.OK);
                 BlanquearCajasDeTexto();
             }
         }
 
-        private bool AutenticarDesdeBaseDeDatos(string usuario, string contrasenia)
+
+        private bool AutenticarDesdeBaseDeDatos(string usuario, string contrasena)
         {
             bool autenticado = false;
 
@@ -78,31 +62,64 @@ namespace SistemaDeAlarma
             {
                 using (SqlConnection connection = ConexionBDD.GetConnection())
                 {
-                    string query = "SELECT COUNT(1) FROM LOGIN WHERE usuario_login = @usuario AND contrasenia_login = @contrasenia";
+                    string query = @"
+                SELECT u.ID_USUARIO, u.nombre_usuario, u.rol_usuario, l.usuario_login, l.contrasenia_login 
+                FROM login l
+                INNER JOIN usuarios u ON l.ID_USUARIO = u.ID_USUARIO
+                WHERE l.usuario_login = @usuario AND l.contrasenia_login = @contrasena";
+
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@usuario", usuario);
-                        cmd.Parameters.AddWithValue("@contrasenia", contrasenia);
+                        cmd.Parameters.AddWithValue("@contrasena", contrasena);
 
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                        if (count == 1)
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            autenticado = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("El usuario o la contraseña no coinciden.");
+                            if (reader.Read())
+                            {
+                                ConfiguracionProyecto.IDUsuario = Convert.ToInt32(reader["ID_USUARIO"]);
+                                ConfiguracionProyecto.NombreUsuario = reader["nombre_usuario"].ToString();
+                                ConfiguracionProyecto.Rol = reader["rol_usuario"].ToString();
+                                ConfiguracionProyecto.Email = reader["usuario_login"].ToString();
+                                autenticado = true;
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectarse a la base de datos: " + ex.Message);
+                MessageBox.Show("Error al conectarse a la base de datos: " + ex.Message, "Error de conexión", MessageBoxButtons.OK);
+                autenticado = false;
             }
 
             return autenticado;
+        }
+
+
+        private void RedirigirAlDashboard()
+        {
+            if (ConfiguracionProyecto.Rol == "Residente")
+            {
+                DashboardAdmin dashboardResidente = new DashboardAdmin();
+                dashboardResidente.Show();
+            }
+            else if (ConfiguracionProyecto.Rol == "Administrador")
+            {
+                DashboardResidente dashboardAdmin = new DashboardResidente();
+                dashboardAdmin.Show();
+            }
+            else if (ConfiguracionProyecto.Rol == "GuardiaSeguridad")
+            {
+                DashboardGuardia dashboardGuardia = new DashboardGuardia();
+                dashboardGuardia.Show();
+            }
+            else
+            {
+                MessageBox.Show("Rol de usuario no reconocido: " + ConfiguracionProyecto.Rol, "Error", MessageBoxButtons.OK);
+            }
+
+            this.Hide();
         }
 
 
@@ -110,12 +127,6 @@ namespace SistemaDeAlarma
         {
             string validacion = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(email, validacion);
-        }
-
-        public void ControlTamanioFormulario()
-        {
-            decimal alto = frm_login.ActiveForm.Height;
-            decimal ancho = frm_login.ActiveForm.Width;
         }
 
         private void BlanquearCajasDeTexto()
@@ -126,7 +137,7 @@ namespace SistemaDeAlarma
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
+            DashboardAdmin dashboard = new DashboardAdmin();
             dashboard.Show();
             this.Hide();
         }

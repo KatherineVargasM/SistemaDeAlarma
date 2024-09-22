@@ -16,7 +16,7 @@ namespace SistemaDeAlarma.models
         public string Rol { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
-        public DateTime FechaIngreso { get; set; }
+        public DateTime FechaNacimiento { get; set; }
 
         public usuariosModel() { }
 
@@ -26,10 +26,11 @@ namespace SistemaDeAlarma.models
             {
                 using (var conexion = ConexionBDD.GetConnection())
                 {
-                    var consulta = "INSERT INTO usuarios (apellido_usuario, nombre_usuario, rol_usuario, telefono_usuario, email_usuario, fecha_ingreso_usuario) " +
-                                   "OUTPUT INSERTED.ID_USUARIO, INSERTED.apellido_usuario, INSERTED.nombre_usuario, INSERTED.rol_usuario, " +
-                                   "INSERTED.telefono_usuario, INSERTED.email_usuario, INSERTED.fecha_ingreso_usuario " +
-                                   "VALUES (@Apellido, @Nombre, @Rol, @Telefono, @Email, @FechaIngreso)";
+                    var consulta = "INSERT INTO usuarios (apellido_usuario, nombre_usuario, rol_usuario, telefono_usuario, email_usuario, fecha_nacimiento) " +
+                                    "OUTPUT INSERTED.ID_USUARIO, INSERTED.apellido_usuario, INSERTED.nombre_usuario, INSERTED.rol_usuario, " +
+                                    "INSERTED.telefono_usuario, INSERTED.email_usuario, INSERTED.fecha_nacimiento " +
+                                    "VALUES (@Apellido, @Nombre, @Rol, @Telefono, @Email, @FechaNacimiento)";
+
 
                     using (var comando = new SqlCommand(consulta, conexion))
                     {
@@ -38,7 +39,7 @@ namespace SistemaDeAlarma.models
                         comando.Parameters.AddWithValue("@Rol", usuario.Rol);
                         comando.Parameters.AddWithValue("@Telefono", usuario.Telefono);
                         comando.Parameters.AddWithValue("@Email", usuario.Email);
-                        comando.Parameters.AddWithValue("@FechaIngreso", usuario.FechaIngreso);
+                        comando.Parameters.AddWithValue("@FechaNacimiento", usuario.FechaNacimiento);
 
                         using (var lector = comando.ExecuteReader())
                         {
@@ -52,7 +53,7 @@ namespace SistemaDeAlarma.models
                                     Rol = lector["rol_usuario"].ToString(),
                                     Telefono = lector["telefono_usuario"].ToString(),
                                     Email = lector["email_usuario"].ToString(),
-                                    FechaIngreso = Convert.ToDateTime(lector["fecha_ingreso_usuario"])
+                                    FechaNacimiento = Convert.ToDateTime(lector["fecha_nacimiento"])
                                 };
                             }
                         }
@@ -70,14 +71,6 @@ namespace SistemaDeAlarma.models
             return null;
         }
 
-        public string NombreCompleto
-        {
-            get
-            {
-                return $"{Apellido} {Nombre}";
-            }
-        }
-
         public static string Actualizar(usuariosModel usuario)
         {
             try
@@ -85,7 +78,7 @@ namespace SistemaDeAlarma.models
                 using (var conexion = ConexionBDD.GetConnection())
                 {
                     var consulta = "UPDATE usuarios SET apellido_usuario = @Apellido, nombre_usuario = @Nombre, rol_usuario = @Rol, " +
-                                   "telefono_usuario = @Telefono, email_usuario = @Email, fecha_ingreso_usuario = @FechaIngreso " +
+                                   "telefono_usuario = @Telefono, email_usuario = @Email, fecha_nacimiento = @FechaNacimiento " +
                                    "WHERE ID_USUARIO = @IdUsuario";
 
                     using (var comando = new SqlCommand(consulta, conexion))
@@ -96,7 +89,7 @@ namespace SistemaDeAlarma.models
                         comando.Parameters.AddWithValue("@Rol", usuario.Rol);
                         comando.Parameters.AddWithValue("@Telefono", usuario.Telefono);
                         comando.Parameters.AddWithValue("@Email", usuario.Email);
-                        comando.Parameters.AddWithValue("@FechaIngreso", usuario.FechaIngreso);
+                        comando.Parameters.AddWithValue("@FechaNacimiento", usuario.FechaNacimiento);
 
                         comando.ExecuteNonQuery();
                     }
@@ -115,35 +108,11 @@ namespace SistemaDeAlarma.models
             }
         }
 
-        public static string Eliminar(int idUsuario)
+        public string NombreCompleto
         {
-            try
+            get
             {
-                using (var conexion = ConexionBDD.GetConnection())
-                {
-                    var consulta = "DELETE FROM usuarios WHERE ID_USUARIO = @IdUsuario";
-
-                    using (var comando = new SqlCommand(consulta, conexion))
-                    {
-                        comando.Parameters.AddWithValue("@IdUsuario", idUsuario);
-                        comando.ExecuteNonQuery();
-                    }
-                }
-                return "OK";
-            }
-            catch (SqlException ex) when (ex.Number == 547)
-            {
-                return "Error de restricción de clave foránea";
-            }
-            catch (SqlException ex)
-            {
-                ControlErrores.ManejarErrorSql(ex, "Error al eliminar el usuario.");
-                return "Error SQL";
-            }
-            catch (Exception ex)
-            {
-                ControlErrores.ManejarErrorGeneral(ex, "Error al eliminar el usuario.");
-                return "Error";
+                return $"{Apellido} {Nombre}";
             }
         }
 
@@ -171,7 +140,7 @@ namespace SistemaDeAlarma.models
                                     Rol = lector["rol_usuario"].ToString(),
                                     Telefono = lector["telefono_usuario"].ToString(),
                                     Email = lector["email_usuario"].ToString(),
-                                    FechaIngreso = Convert.ToDateTime(lector["fecha_ingreso_usuario"])
+                                    FechaNacimiento = Convert.ToDateTime(lector["fecha_nacimiento"])
                                 };
                             }
                         }
@@ -213,7 +182,7 @@ namespace SistemaDeAlarma.models
                                     Rol = lector["rol_usuario"].ToString(),
                                     Telefono = lector["telefono_usuario"].ToString(),
                                     Email = lector["email_usuario"].ToString(),
-                                    FechaIngreso = Convert.ToDateTime(lector["fecha_ingreso_usuario"])
+                                    FechaNacimiento = Convert.ToDateTime(lector["fecha_nacimiento"])
                                 });
                             }
                         }

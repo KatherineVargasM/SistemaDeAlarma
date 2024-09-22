@@ -20,11 +20,6 @@ namespace SistemaDeAlarma.controller
             return usuariosModel.Actualizar(usuario);
         }
 
-        public string EliminarUsuario(int idUsuario)
-        {
-            return usuariosModel.Eliminar(idUsuario);
-        }
-
         public usuariosModel ObtenerUsuarioPorId(int idUsuario)
         {
             return usuariosModel.ObtenerPorId(idUsuario);

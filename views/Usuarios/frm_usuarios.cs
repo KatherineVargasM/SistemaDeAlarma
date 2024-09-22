@@ -64,7 +64,7 @@ namespace SistemaDeAlarma.views.Usuarios
                     Rol = txt_Rol.Text,
                     Telefono = txt_Telefono.Text,
                     Email = txt_Email.Text,
-                    FechaIngreso = dtp_FechaIngreso.Value
+                    FechaNacimiento = dtp_FechaNacimiento.Value
                 };
 
                 var insertado = usuariosController.InsertarUsuario(usuario);
@@ -92,7 +92,7 @@ namespace SistemaDeAlarma.views.Usuarios
             txt_Rol.Clear();
             txt_Telefono.Clear();
             txt_Email.Clear();
-            dtp_FechaIngreso.Value = DateTime.Now;
+            dtp_FechaNacimiento.Value = DateTime.Now;
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace SistemaDeAlarma.views.Usuarios
                     Rol = txt_Rol.Text,
                     Telefono = txt_Telefono.Text,
                     Email = txt_Email.Text,
-                    FechaIngreso = dtp_FechaIngreso.Value
+                    FechaNacimiento = dtp_FechaNacimiento.Value
                 };
 
                 var resultado = usuariosController.ActualizarUsuario(usuario);
@@ -133,38 +133,6 @@ namespace SistemaDeAlarma.views.Usuarios
             }
         }
 
-        private void btn_Eliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (lst_Usuarios.SelectedItem == null)
-                {
-                    MessageBox.Show("Seleccione un usuario de la lista para eliminar.", "Error", MessageBoxButtons.OK);
-                    return;
-                }
-
-                var idUsuario = Convert.ToInt32(lst_Usuarios.SelectedValue);
-                var resultado = usuariosController.EliminarUsuario(idUsuario);
-
-                if (resultado == "OK")
-                {
-                    CargarUsuarios();
-                    ControlErrores.ManejarEliminar();
-                }
-                else if (resultado == "Error de restricción de clave foranea")
-                {
-                    MessageBox.Show("No se puede eliminar el usuario debido a restricciones de clave foránea en la base de datos.", "Error de Eliminación", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo eliminar el usuario.", "Error", MessageBoxButtons.OK);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al eliminar el usuario: {ex.Message}", "Error", MessageBoxButtons.OK);
-            }
-        }
 
         private void lst_Usuarios_DoubleClick(object sender, EventArgs e)
         {
@@ -178,7 +146,7 @@ namespace SistemaDeAlarma.views.Usuarios
                     txt_Rol.Text = usuario.Rol;
                     txt_Telefono.Text = usuario.Telefono;
                     txt_Email.Text = usuario.Email;
-                    dtp_FechaIngreso.Value = usuario.FechaIngreso;
+                    dtp_FechaNacimiento.Value = usuario.FechaNacimiento;
                 }
                 else
                 {

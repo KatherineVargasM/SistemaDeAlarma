@@ -31,6 +31,7 @@ namespace SistemaDeAlarma.views.Sensores
             CargarSensores();
             CargarUbicaciones();
         }
+
         private void CargarSensores()
         {
             var sensores = sensoresController.ObtenerTodosLosSensores();
@@ -38,10 +39,10 @@ namespace SistemaDeAlarma.views.Sensores
             lst_Sensores.DisplayMember = "IdSensor";
             lst_Sensores.ValueMember = "IdSensor";
         }
+
         private void CargarUbicaciones()
         {
-            var ubicacionesController = new ubicacionesController();
-            var ubicaciones = sensoresController.ObtenerTodosLosSensores();
+            var ubicaciones = ubicacionesController.ObtenerTodasLasUbicaciones();
             cmb_IdUbicacion.DataSource = ubicaciones;
             cmb_IdUbicacion.DisplayMember = "LugarUbicacion";
             cmb_IdUbicacion.ValueMember = "IdUbicacion";
@@ -61,7 +62,31 @@ namespace SistemaDeAlarma.views.Sensores
             return true;
         }
 
-        private void btn_Grabar_Click(object sender, EventArgs e)
+
+        private void lst_Sensores_DoubleClick(object sender, EventArgs e)
+        {
+            if (lst_Sensores.SelectedValue != null)
+            {
+                var sensor = sensoresController.ObtenerSensorPorId(Convert.ToInt32(lst_Sensores.SelectedValue));
+                if (sensor != null)
+                {
+                    txt_Tipo.Text = sensor.TipoSensor;
+                    txt_Estado.Text = sensor.EstadoSensor;
+                    dtp_FechaInstalacion.Value = sensor.FechaInstalacionSensor;
+                    cmb_IdUbicacion.SelectedValue = sensor.IdUbicacion;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el sensor seleccionado.", "Error", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un ítem de la lista.", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btn_Grabar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -96,15 +121,7 @@ namespace SistemaDeAlarma.views.Sensores
             }
         }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
-        {
-            txt_Tipo.Clear();
-            txt_Estado.Clear();
-            dtp_FechaInstalacion.Value = DateTime.Now;
-            cmb_IdUbicacion.SelectedIndex = -1;
-        }
-
-        private void btn_Modificar_Click(object sender, EventArgs e)
+        private void btn_Modificar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -140,60 +157,12 @@ namespace SistemaDeAlarma.views.Sensores
             }
         }
 
-        private void btn_Eliminar_Click(object sender, EventArgs e)
+        private void btn_Cancelar_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                if (lst_Sensores.SelectedItem == null)
-                {
-                    MessageBox.Show("Seleccione un sensor de la lista para eliminar.", "Error", MessageBoxButtons.OK);
-                    return;
-                }
-
-                var idSensor = Convert.ToInt32(lst_Sensores.SelectedValue);
-                var resultado = sensoresController.EliminarSensor(idSensor);
-
-                if (resultado == "OK")
-                {
-                    CargarSensores();
-                    ControlErrores.ManejarEliminar();
-                }
-                else if (resultado == "Error de restricción de clave foránea")
-                {
-                    MessageBox.Show("No se puede eliminar el sensor debido a restricciones de clave foránea en la base de datos.", "Error de Eliminación", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo eliminar el sensor.", "Error", MessageBoxButtons.OK);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al eliminar el sensor: {ex.Message}", "Error", MessageBoxButtons.OK);
-            }
-        }
-
-        private void lst_Sensores_DoubleClick(object sender, EventArgs e)
-        {
-            if (lst_Sensores.SelectedValue != null)
-            {
-                var sensor = sensoresController.ObtenerSensorPorId(Convert.ToInt32(lst_Sensores.SelectedValue));
-                if (sensor != null)
-                {
-                    txt_Tipo.Text = sensor.TipoSensor;
-                    txt_Estado.Text = sensor.EstadoSensor;
-                    dtp_FechaInstalacion.Value = sensor.FechaInstalacionSensor;
-                    cmb_IdUbicacion.SelectedValue = sensor.IdUbicacion;
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró el sensor seleccionado.", "Error", MessageBoxButtons.OK);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un ítem de la lista.", "Error", MessageBoxButtons.OK);
-            }
+            txt_Tipo.Clear();
+            txt_Estado.Clear();
+            dtp_FechaInstalacion.Value = DateTime.Now;
+            cmb_IdUbicacion.SelectedIndex = -1;
         }
     }
 }
