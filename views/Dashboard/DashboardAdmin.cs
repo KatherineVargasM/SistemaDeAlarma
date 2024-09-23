@@ -93,8 +93,7 @@ namespace SistemaDeAlarma.views.Dashboard
 
         private void gestionarUbicacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_ubicaciones _Ubicaciones = new frm_ubicaciones();
-            _Ubicaciones.ShowDialog();
+            
         }
 
         private void gestionarAlarmasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -131,13 +130,13 @@ namespace SistemaDeAlarma.views.Dashboard
                 ubicacionesController ubicacionesController = new ubicacionesController();
                 var ubicacion = ubicacionesController.ObtenerUbicacionPorId(sensorAleatorio.IdUbicacion);
                 string mensaje = $"¡Se está detectando humo en este momento!\n" +
-                                 $"Se encendió el sensor del ID: {sensorAleatorio.IdSensor}.\n" +
+                                 $"Se encendió el sensor: {sensorAleatorio.IdSensor}.\n" +
                                  $"Ubicación: {ubicacion.LugarUbicacion}.\n" +
+                                 "En caso de emergencia, llame al 911.\n" +
                                  "Por favor, evacue el área inmediatamente.\n" +
-                                 "En caso de emergencia, llame al 911 o al número de emergencia del edificio.\n" +
                                  "Verifique que todos estén a salvo.";
 
-                DialogResult result = MessageBox.Show(mensaje, "Alerta de Humo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show(mensaje, "ALERTA DE HUMO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.OK)
                 {
@@ -150,6 +149,45 @@ namespace SistemaDeAlarma.views.Dashboard
             }
         }
 
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_listaUsuarios _listaUsuarios = new frm_listaUsuarios();
+            _listaUsuarios.Show();
+        }
 
+        private void reportesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listaSensoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_listaSensores _listaSensores = new frm_listaSensores();
+            _listaSensores.Show();
+        }
+
+        private void gestionarUbicacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_ubicaciones _Ubicaciones = new frm_ubicaciones();
+            _Ubicaciones.ShowDialog();
+        }
+
+        private void listaDeUbicacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_listaUbicaciones _listaUbicaciones = new frm_listaUbicaciones();
+            _listaUbicaciones.Show();
+        }
+
+        private void listaDeLecturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_listaLecturas _listaLecturas = new frm_listaLecturas();
+            _listaLecturas.Show();
+        }
+
+        private void listaDeAlertasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_listaAlertas _listaAlertas = new frm_listaAlertas();
+            _listaAlertas.Show();
+        }
     }
 }

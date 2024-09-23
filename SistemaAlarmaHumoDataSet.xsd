@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SistemaAlarmaHumoDataSet" targetNamespace="http://tempuri.org/SistemaAlarmaHumoDataSet.xsd" xmlns:mstns="http://tempuri.org/SistemaAlarmaHumoDataSet.xsd" xmlns="http://tempuri.org/SistemaAlarmaHumoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SistemaAlarmaHumoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SistemaAlarmaHumoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SistemaDeAlarma.Properties.Settings.GlobalReference.Default.SistemaAlarmaHumoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="alertasTableAdapter" GeneratorDataComponentClassName="alertasTableAdapter" Name="alertas" UserDataComponentName="alertasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SistemaAlarmaHumoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        a.ID_ALERTA, u.apellido_usuario, ub.lugar_ubicacion, l.fecha_lectura, a.fecha_hora_alerta, a.tipo_alerta, a.nivel_alarma_alerta, a.descripcion_alerta
+FROM            alertas AS a INNER JOIN
+                         usuarios AS u ON a.ID_USUARIO = u.ID_USUARIO INNER JOIN
+                         sensores AS s ON a.ID_SENSOR = s.ID_SENSOR INNER JOIN
+                         ubicaciones AS ub ON s.ID_UBICACION = ub.ID_UBICACION INNER JOIN
+                         lecturas AS l ON a.ID_LECTURA = l.ID_LECTURA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_ALERTA" DataSetColumn="ID_ALERTA" />
+              <Mapping SourceColumn="fecha_hora_alerta" DataSetColumn="fecha_hora_alerta" />
+              <Mapping SourceColumn="tipo_alerta" DataSetColumn="tipo_alerta" />
+              <Mapping SourceColumn="nivel_alarma_alerta" DataSetColumn="nivel_alarma_alerta" />
+              <Mapping SourceColumn="descripcion_alerta" DataSetColumn="descripcion_alerta" />
+              <Mapping SourceColumn="apellido_usuario" DataSetColumn="apellido_usuario" />
+              <Mapping SourceColumn="lugar_ubicacion" DataSetColumn="lugar_ubicacion" />
+              <Mapping SourceColumn="fecha_lectura" DataSetColumn="fecha_lectura" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="lecturasTableAdapter" GeneratorDataComponentClassName="lecturasTableAdapter" Name="lecturas" UserDataComponentName="lecturasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SistemaAlarmaHumoConnectionString (Settings)" DbObjectName="SistemaAlarmaHumo.dbo.lecturas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[lecturas] WHERE (([ID_LECTURA] = @Original_ID_LECTURA) AND ((@IsNull_fecha_lectura = 1 AND [fecha_lectura] IS NULL) OR ([fecha_lectura] = @Original_fecha_lectura)) AND ((@IsNull_espesor_humo = 1 AND [espesor_humo] IS NULL) OR ([espesor_humo] = @Original_espesor_humo)) AND ((@IsNull_abundancia_humo = 1 AND [abundancia_humo] IS NULL) OR ([abundancia_humo] = @Original_abundancia_humo)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_LECTURA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_LECTURA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fecha_lectura" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fecha_lectura" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_fecha_lectura" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_lectura" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_espesor_humo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="espesor_humo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_espesor_humo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="espesor_humo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_abundancia_humo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="abundancia_humo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_abundancia_humo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="abundancia_humo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[lecturas] ([fecha_lectura], [espesor_humo], [abundancia_humo]) VALUES (@fecha_lectura, @espesor_humo, @abundancia_humo);
+SELECT ID_LECTURA, fecha_lectura, espesor_humo, abundancia_humo FROM lecturas WHERE (ID_LECTURA = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@fecha_lectura" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_lectura" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@espesor_humo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="espesor_humo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@abundancia_humo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="abundancia_humo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_LECTURA, fecha_lectura, espesor_humo, abundancia_humo FROM dbo.lecturas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[lecturas] SET [fecha_lectura] = @fecha_lectura, [espesor_humo] = @espesor_humo, [abundancia_humo] = @abundancia_humo WHERE (([ID_LECTURA] = @Original_ID_LECTURA) AND ((@IsNull_fecha_lectura = 1 AND [fecha_lectura] IS NULL) OR ([fecha_lectura] = @Original_fecha_lectura)) AND ((@IsNull_espesor_humo = 1 AND [espesor_humo] IS NULL) OR ([espesor_humo] = @Original_espesor_humo)) AND ((@IsNull_abundancia_humo = 1 AND [abundancia_humo] IS NULL) OR ([abundancia_humo] = @Original_abundancia_humo)));
+SELECT ID_LECTURA, fecha_lectura, espesor_humo, abundancia_humo FROM lecturas WHERE (ID_LECTURA = @ID_LECTURA)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@fecha_lectura" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_lectura" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@espesor_humo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="espesor_humo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@abundancia_humo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="abundancia_humo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_LECTURA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_LECTURA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fecha_lectura" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fecha_lectura" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_fecha_lectura" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_lectura" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_espesor_humo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="espesor_humo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_espesor_humo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="espesor_humo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_abundancia_humo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="abundancia_humo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_abundancia_humo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="abundancia_humo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID_LECTURA" ColumnName="ID_LECTURA" DataSourceName="SistemaAlarmaHumo.dbo.lecturas" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_LECTURA" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_LECTURA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_LECTURA" DataSetColumn="ID_LECTURA" />
+              <Mapping SourceColumn="fecha_lectura" DataSetColumn="fecha_lectura" />
+              <Mapping SourceColumn="espesor_humo" DataSetColumn="espesor_humo" />
+              <Mapping SourceColumn="abundancia_humo" DataSetColumn="abundancia_humo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="loginTableAdapter" GeneratorDataComponentClassName="loginTableAdapter" Name="login" UserDataComponentName="loginTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SistemaAlarmaHumoConnectionString (Settings)" DbObjectName="SistemaAlarmaHumo.dbo.login" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[login] WHERE (([ID_LOGIN] = @Original_ID_LOGIN) AND ((@IsNull_usuario_login = 1 AND [usuario_login] IS NULL) OR ([usuario_login] = @Original_usuario_login)) AND ((@IsNull_contrasenia_login = 1 AND [contrasenia_login] IS NULL) OR ([contrasenia_login] = @Original_contrasenia_login)) AND ((@IsNull_ID_USUARIO = 1 AND [ID_USUARIO] IS NULL) OR ([ID_USUARIO] = @Original_ID_USUARIO)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_LOGIN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_LOGIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_usuario_login" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="usuario_login" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_usuario_login" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="usuario_login" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_contrasenia_login" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="contrasenia_login" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_contrasenia_login" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="contrasenia_login" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_USUARIO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_USUARIO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_USUARIO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_USUARIO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[login] ([usuario_login], [contrasenia_login], [ID_USUARIO]) VALUES (@usuario_login, @contrasenia_login, @ID_USUARIO);
+SELECT ID_LOGIN, usuario_login, contrasenia_login, ID_USUARIO FROM login WHERE (ID_LOGIN = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@usuario_login" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="usuario_login" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@contrasenia_login" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="contrasenia_login" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_USUARIO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_USUARIO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_LOGIN, usuario_login, contrasenia_login, ID_USUARIO FROM dbo.login</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[login] SET [usuario_login] = @usuario_login, [contrasenia_login] = @contrasenia_login, [ID_USUARIO] = @ID_USUARIO WHERE (([ID_LOGIN] = @Original_ID_LOGIN) AND ((@IsNull_usuario_login = 1 AND [usuario_login] IS NULL) OR ([usuario_login] = @Original_usuario_login)) AND ((@IsNull_contrasenia_login = 1 AND [contrasenia_login] IS NULL) OR ([contrasenia_login] = @Original_contrasenia_login)) AND ((@IsNull_ID_USUARIO = 1 AND [ID_USUARIO] IS NULL) OR ([ID_USUARIO] = @Original_ID_USUARIO)));
+SELECT ID_LOGIN, usuario_login, contrasenia_login, ID_USUARIO FROM login WHERE (ID_LOGIN = @ID_LOGIN)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@usuario_login" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="usuario_login" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@contrasenia_login" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="contrasenia_login" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_USUARIO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_USUARIO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_LOGIN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_LOGIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_usuario_login" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="usuario_login" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_usuario_login" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="usuario_login" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_contrasenia_login" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="contrasenia_login" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_contrasenia_login" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="contrasenia_login" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_USUARIO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_USUARIO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_USUARIO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_USUARIO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID_LOGIN" ColumnName="ID_LOGIN" DataSourceName="SistemaAlarmaHumo.dbo.login" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_LOGIN" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_LOGIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_LOGIN" DataSetColumn="ID_LOGIN" />
+              <Mapping SourceColumn="usuario_login" DataSetColumn="usuario_login" />
+              <Mapping SourceColumn="contrasenia_login" DataSetColumn="contrasenia_login" />
+              <Mapping SourceColumn="ID_USUARIO" DataSetColumn="ID_USUARIO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sensoresTableAdapter" GeneratorDataComponentClassName="sensoresTableAdapter" Name="sensores" UserDataComponentName="sensoresTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SistemaAlarmaHumoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        s.ID_SENSOR, u.lugar_ubicacion, s.tipo_sensor, s.fecha_instalacion_sensor, s.estado_sensor
+FROM            sensores AS s INNER JOIN
+                         ubicaciones AS u ON s.ID_UBICACION = u.ID_UBICACION</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_SENSOR" DataSetColumn="ID_SENSOR" />
+              <Mapping SourceColumn="tipo_sensor" DataSetColumn="tipo_sensor" />
+              <Mapping SourceColumn="fecha_instalacion_sensor" DataSetColumn="fecha_instalacion_sensor" />
+              <Mapping SourceColumn="estado_sensor" DataSetColumn="estado_sensor" />
+              <Mapping SourceColumn="lugar_ubicacion" DataSetColumn="lugar_ubicacion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ubicacionesTableAdapter" GeneratorDataComponentClassName="ubicacionesTableAdapter" Name="ubicaciones" UserDataComponentName="ubicacionesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SistemaAlarmaHumoConnectionString (Settings)" DbObjectName="SistemaAlarmaHumo.dbo.ubicaciones" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[ubicaciones] WHERE (([ID_UBICACION] = @Original_ID_UBICACION) AND ((@IsNull_lugar_ubicacion = 1 AND [lugar_ubicacion] IS NULL) OR ([lugar_ubicacion] = @Original_lugar_ubicacion)) AND ((@IsNull_descripcion_ubicacion = 1 AND [descripcion_ubicacion] IS NULL) OR ([descripcion_ubicacion] = @Original_descripcion_ubicacion)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_UBICACION" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_UBICACION" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lugar_ubicacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lugar_ubicacion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_lugar_ubicacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lugar_ubicacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descripcion_ubicacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="descripcion_ubicacion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_descripcion_ubicacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="descripcion_ubicacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[ubicaciones] ([lugar_ubicacion], [descripcion_ubicacion]) VALUES (@lugar_ubicacion, @descripcion_ubicacion);
+SELECT ID_UBICACION, lugar_ubicacion, descripcion_ubicacion FROM ubicaciones WHERE (ID_UBICACION = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@lugar_ubicacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lugar_ubicacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@descripcion_ubicacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="descripcion_ubicacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_UBICACION, lugar_ubicacion, descripcion_ubicacion FROM dbo.ubicaciones</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[ubicaciones] SET [lugar_ubicacion] = @lugar_ubicacion, [descripcion_ubicacion] = @descripcion_ubicacion WHERE (([ID_UBICACION] = @Original_ID_UBICACION) AND ((@IsNull_lugar_ubicacion = 1 AND [lugar_ubicacion] IS NULL) OR ([lugar_ubicacion] = @Original_lugar_ubicacion)) AND ((@IsNull_descripcion_ubicacion = 1 AND [descripcion_ubicacion] IS NULL) OR ([descripcion_ubicacion] = @Original_descripcion_ubicacion)));
+SELECT ID_UBICACION, lugar_ubicacion, descripcion_ubicacion FROM ubicaciones WHERE (ID_UBICACION = @ID_UBICACION)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@lugar_ubicacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lugar_ubicacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@descripcion_ubicacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="descripcion_ubicacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_UBICACION" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_UBICACION" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lugar_ubicacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lugar_ubicacion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_lugar_ubicacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="lugar_ubicacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descripcion_ubicacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="descripcion_ubicacion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_descripcion_ubicacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="descripcion_ubicacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID_UBICACION" ColumnName="ID_UBICACION" DataSourceName="SistemaAlarmaHumo.dbo.ubicaciones" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_UBICACION" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_UBICACION" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_UBICACION" DataSetColumn="ID_UBICACION" />
+              <Mapping SourceColumn="lugar_ubicacion" DataSetColumn="lugar_ubicacion" />
+              <Mapping SourceColumn="descripcion_ubicacion" DataSetColumn="descripcion_ubicacion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="usuariosTableAdapter" GeneratorDataComponentClassName="usuariosTableAdapter" Name="usuarios" UserDataComponentName="usuariosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SistemaAlarmaHumoConnectionString (Settings)" DbObjectName="SistemaAlarmaHumo.dbo.usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[usuarios] WHERE (([ID_USUARIO] = @Original_ID_USUARIO) AND ((@IsNull_apellido_usuario = 1 AND [apellido_usuario] IS NULL) OR ([apellido_usuario] = @Original_apellido_usuario)) AND ((@IsNull_nombre_usuario = 1 AND [nombre_usuario] IS NULL) OR ([nombre_usuario] = @Original_nombre_usuario)) AND ((@IsNull_rol_usuario = 1 AND [rol_usuario] IS NULL) OR ([rol_usuario] = @Original_rol_usuario)) AND ((@IsNull_telefono_usuario = 1 AND [telefono_usuario] IS NULL) OR ([telefono_usuario] = @Original_telefono_usuario)) AND ((@IsNull_email_usuario = 1 AND [email_usuario] IS NULL) OR ([email_usuario] = @Original_email_usuario)) AND ((@IsNull_fecha_nacimiento = 1 AND [fecha_nacimiento] IS NULL) OR ([fecha_nacimiento] = @Original_fecha_nacimiento)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_USUARIO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_USUARIO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_apellido_usuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="apellido_usuario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_apellido_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="apellido_usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nombre_usuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nombre_usuario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_nombre_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre_usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_rol_usuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rol_usuario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_rol_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="rol_usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_telefono_usuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="telefono_usuario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_telefono_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="telefono_usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_email_usuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="email_usuario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_email_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="email_usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fecha_nacimiento" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fecha_nacimiento" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_fecha_nacimiento" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_nacimiento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[usuarios] ([apellido_usuario], [nombre_usuario], [rol_usuario], [telefono_usuario], [email_usuario], [fecha_nacimiento]) VALUES (@apellido_usuario, @nombre_usuario, @rol_usuario, @telefono_usuario, @email_usuario, @fecha_nacimiento);
+SELECT ID_USUARIO, apellido_usuario, nombre_usuario, rol_usuario, telefono_usuario, email_usuario, fecha_nacimiento FROM usuarios WHERE (ID_USUARIO = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@apellido_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="apellido_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@nombre_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@rol_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="rol_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@telefono_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="telefono_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@email_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="email_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@fecha_nacimiento" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_nacimiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_USUARIO, apellido_usuario, nombre_usuario, rol_usuario, telefono_usuario, email_usuario, fecha_nacimiento FROM dbo.usuarios</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[usuarios] SET [apellido_usuario] = @apellido_usuario, [nombre_usuario] = @nombre_usuario, [rol_usuario] = @rol_usuario, [telefono_usuario] = @telefono_usuario, [email_usuario] = @email_usuario, [fecha_nacimiento] = @fecha_nacimiento WHERE (([ID_USUARIO] = @Original_ID_USUARIO) AND ((@IsNull_apellido_usuario = 1 AND [apellido_usuario] IS NULL) OR ([apellido_usuario] = @Original_apellido_usuario)) AND ((@IsNull_nombre_usuario = 1 AND [nombre_usuario] IS NULL) OR ([nombre_usuario] = @Original_nombre_usuario)) AND ((@IsNull_rol_usuario = 1 AND [rol_usuario] IS NULL) OR ([rol_usuario] = @Original_rol_usuario)) AND ((@IsNull_telefono_usuario = 1 AND [telefono_usuario] IS NULL) OR ([telefono_usuario] = @Original_telefono_usuario)) AND ((@IsNull_email_usuario = 1 AND [email_usuario] IS NULL) OR ([email_usuario] = @Original_email_usuario)) AND ((@IsNull_fecha_nacimiento = 1 AND [fecha_nacimiento] IS NULL) OR ([fecha_nacimiento] = @Original_fecha_nacimiento)));
+SELECT ID_USUARIO, apellido_usuario, nombre_usuario, rol_usuario, telefono_usuario, email_usuario, fecha_nacimiento FROM usuarios WHERE (ID_USUARIO = @ID_USUARIO)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@apellido_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="apellido_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@nombre_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@rol_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="rol_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@telefono_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="telefono_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@email_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="email_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@fecha_nacimiento" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_nacimiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_USUARIO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_USUARIO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_apellido_usuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="apellido_usuario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_apellido_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="apellido_usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nombre_usuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nombre_usuario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_nombre_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre_usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_rol_usuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rol_usuario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_rol_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="rol_usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_telefono_usuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="telefono_usuario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_telefono_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="telefono_usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_email_usuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="email_usuario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_email_usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="email_usuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fecha_nacimiento" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fecha_nacimiento" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_fecha_nacimiento" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_nacimiento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID_USUARIO" ColumnName="ID_USUARIO" DataSourceName="SistemaAlarmaHumo.dbo.usuarios" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_USUARIO" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_USUARIO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_USUARIO" DataSetColumn="ID_USUARIO" />
+              <Mapping SourceColumn="apellido_usuario" DataSetColumn="apellido_usuario" />
+              <Mapping SourceColumn="nombre_usuario" DataSetColumn="nombre_usuario" />
+              <Mapping SourceColumn="rol_usuario" DataSetColumn="rol_usuario" />
+              <Mapping SourceColumn="telefono_usuario" DataSetColumn="telefono_usuario" />
+              <Mapping SourceColumn="email_usuario" DataSetColumn="email_usuario" />
+              <Mapping SourceColumn="fecha_nacimiento" DataSetColumn="fecha_nacimiento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SistemaAlarmaHumoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="SistemaAlarmaHumoDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SistemaAlarmaHumoDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="alertas" msprop:Generator_RowEvHandlerName="alertasRowChangeEventHandler" msprop:Generator_RowDeletedName="alertasRowDeleted" msprop:Generator_RowDeletingName="alertasRowDeleting" msprop:Generator_RowEvArgName="alertasRowChangeEvent" msprop:Generator_TablePropName="alertas" msprop:Generator_RowChangedName="alertasRowChanged" msprop:Generator_UserTableName="alertas" msprop:Generator_RowChangingName="alertasRowChanging" msprop:Generator_RowClassName="alertasRow" msprop:Generator_TableClassName="alertasDataTable" msprop:Generator_TableVarName="tablealertas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_ALERTA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_ALERTAColumn" msprop:Generator_ColumnPropNameInRow="ID_ALERTA" msprop:Generator_UserColumnName="ID_ALERTA" msprop:Generator_ColumnVarNameInTable="columnID_ALERTA" type="xs:int" />
+              <xs:element name="fecha_hora_alerta" msprop:Generator_ColumnPropNameInTable="fecha_hora_alertaColumn" msprop:Generator_ColumnPropNameInRow="fecha_hora_alerta" msprop:Generator_UserColumnName="fecha_hora_alerta" msprop:Generator_ColumnVarNameInTable="columnfecha_hora_alerta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="tipo_alerta" msprop:Generator_ColumnPropNameInTable="tipo_alertaColumn" msprop:Generator_ColumnPropNameInRow="tipo_alerta" msprop:Generator_UserColumnName="tipo_alerta" msprop:Generator_ColumnVarNameInTable="columntipo_alerta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nivel_alarma_alerta" msprop:Generator_ColumnPropNameInTable="nivel_alarma_alertaColumn" msprop:Generator_ColumnPropNameInRow="nivel_alarma_alerta" msprop:Generator_UserColumnName="nivel_alarma_alerta" msprop:Generator_ColumnVarNameInTable="columnnivel_alarma_alerta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_alerta" msprop:Generator_ColumnPropNameInTable="descripcion_alertaColumn" msprop:Generator_ColumnPropNameInRow="descripcion_alerta" msprop:Generator_UserColumnName="descripcion_alerta" msprop:Generator_ColumnVarNameInTable="columndescripcion_alerta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido_usuario" msprop:Generator_ColumnPropNameInRow="apellido_usuario" msprop:Generator_ColumnPropNameInTable="apellido_usuarioColumn" msprop:Generator_ColumnVarNameInTable="columnapellido_usuario" msprop:Generator_UserColumnName="apellido_usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lugar_ubicacion" msprop:Generator_ColumnPropNameInRow="lugar_ubicacion" msprop:Generator_ColumnPropNameInTable="lugar_ubicacionColumn" msprop:Generator_ColumnVarNameInTable="columnlugar_ubicacion" msprop:Generator_UserColumnName="lugar_ubicacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_lectura" msprop:Generator_ColumnPropNameInRow="fecha_lectura" msprop:Generator_ColumnPropNameInTable="fecha_lecturaColumn" msprop:Generator_ColumnVarNameInTable="columnfecha_lectura" msprop:Generator_UserColumnName="fecha_lectura" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lecturas" msprop:Generator_RowEvHandlerName="lecturasRowChangeEventHandler" msprop:Generator_RowDeletedName="lecturasRowDeleted" msprop:Generator_RowDeletingName="lecturasRowDeleting" msprop:Generator_RowEvArgName="lecturasRowChangeEvent" msprop:Generator_TablePropName="lecturas" msprop:Generator_RowChangedName="lecturasRowChanged" msprop:Generator_UserTableName="lecturas" msprop:Generator_RowChangingName="lecturasRowChanging" msprop:Generator_RowClassName="lecturasRow" msprop:Generator_TableClassName="lecturasDataTable" msprop:Generator_TableVarName="tablelecturas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_LECTURA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_LECTURAColumn" msprop:Generator_ColumnPropNameInRow="ID_LECTURA" msprop:Generator_UserColumnName="ID_LECTURA" msprop:Generator_ColumnVarNameInTable="columnID_LECTURA" type="xs:int" />
+              <xs:element name="fecha_lectura" msprop:Generator_ColumnPropNameInTable="fecha_lecturaColumn" msprop:Generator_ColumnPropNameInRow="fecha_lectura" msprop:Generator_UserColumnName="fecha_lectura" msprop:Generator_ColumnVarNameInTable="columnfecha_lectura" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="espesor_humo" msprop:Generator_ColumnPropNameInTable="espesor_humoColumn" msprop:Generator_ColumnPropNameInRow="espesor_humo" msprop:Generator_UserColumnName="espesor_humo" msprop:Generator_ColumnVarNameInTable="columnespesor_humo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="abundancia_humo" msprop:Generator_ColumnPropNameInTable="abundancia_humoColumn" msprop:Generator_ColumnPropNameInRow="abundancia_humo" msprop:Generator_UserColumnName="abundancia_humo" msprop:Generator_ColumnVarNameInTable="columnabundancia_humo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="login" msprop:Generator_RowEvHandlerName="loginRowChangeEventHandler" msprop:Generator_RowDeletedName="loginRowDeleted" msprop:Generator_RowDeletingName="loginRowDeleting" msprop:Generator_RowEvArgName="loginRowChangeEvent" msprop:Generator_TablePropName="login" msprop:Generator_RowChangedName="loginRowChanged" msprop:Generator_UserTableName="login" msprop:Generator_RowChangingName="loginRowChanging" msprop:Generator_RowClassName="loginRow" msprop:Generator_TableClassName="loginDataTable" msprop:Generator_TableVarName="tablelogin">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_LOGIN" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_LOGINColumn" msprop:Generator_ColumnPropNameInRow="ID_LOGIN" msprop:Generator_UserColumnName="ID_LOGIN" msprop:Generator_ColumnVarNameInTable="columnID_LOGIN" type="xs:int" />
+              <xs:element name="usuario_login" msprop:Generator_ColumnPropNameInTable="usuario_loginColumn" msprop:Generator_ColumnPropNameInRow="usuario_login" msprop:Generator_UserColumnName="usuario_login" msprop:Generator_ColumnVarNameInTable="columnusuario_login" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="contrasenia_login" msprop:Generator_ColumnPropNameInTable="contrasenia_loginColumn" msprop:Generator_ColumnPropNameInRow="contrasenia_login" msprop:Generator_UserColumnName="contrasenia_login" msprop:Generator_ColumnVarNameInTable="columncontrasenia_login" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_USUARIO" msprop:Generator_ColumnPropNameInTable="ID_USUARIOColumn" msprop:Generator_ColumnPropNameInRow="ID_USUARIO" msprop:Generator_UserColumnName="ID_USUARIO" msprop:Generator_ColumnVarNameInTable="columnID_USUARIO" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sensores" msprop:Generator_RowEvHandlerName="sensoresRowChangeEventHandler" msprop:Generator_RowDeletedName="sensoresRowDeleted" msprop:Generator_RowDeletingName="sensoresRowDeleting" msprop:Generator_RowEvArgName="sensoresRowChangeEvent" msprop:Generator_TablePropName="sensores" msprop:Generator_RowChangedName="sensoresRowChanged" msprop:Generator_UserTableName="sensores" msprop:Generator_RowChangingName="sensoresRowChanging" msprop:Generator_RowClassName="sensoresRow" msprop:Generator_TableClassName="sensoresDataTable" msprop:Generator_TableVarName="tablesensores">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_SENSOR" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_SENSORColumn" msprop:Generator_ColumnPropNameInRow="ID_SENSOR" msprop:Generator_UserColumnName="ID_SENSOR" msprop:Generator_ColumnVarNameInTable="columnID_SENSOR" type="xs:int" />
+              <xs:element name="tipo_sensor" msprop:Generator_ColumnPropNameInTable="tipo_sensorColumn" msprop:Generator_ColumnPropNameInRow="tipo_sensor" msprop:Generator_UserColumnName="tipo_sensor" msprop:Generator_ColumnVarNameInTable="columntipo_sensor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_instalacion_sensor" msprop:Generator_ColumnPropNameInTable="fecha_instalacion_sensorColumn" msprop:Generator_ColumnPropNameInRow="fecha_instalacion_sensor" msprop:Generator_UserColumnName="fecha_instalacion_sensor" msprop:Generator_ColumnVarNameInTable="columnfecha_instalacion_sensor" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="estado_sensor" msprop:Generator_ColumnPropNameInTable="estado_sensorColumn" msprop:Generator_ColumnPropNameInRow="estado_sensor" msprop:Generator_UserColumnName="estado_sensor" msprop:Generator_ColumnVarNameInTable="columnestado_sensor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lugar_ubicacion" msprop:Generator_UserColumnName="lugar_ubicacion" msprop:Generator_ColumnPropNameInTable="lugar_ubicacionColumn" msprop:Generator_ColumnPropNameInRow="lugar_ubicacion" msprop:Generator_ColumnVarNameInTable="columnlugar_ubicacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ubicaciones" msprop:Generator_RowEvHandlerName="ubicacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="ubicacionesRowDeleted" msprop:Generator_RowDeletingName="ubicacionesRowDeleting" msprop:Generator_RowEvArgName="ubicacionesRowChangeEvent" msprop:Generator_TablePropName="ubicaciones" msprop:Generator_RowChangedName="ubicacionesRowChanged" msprop:Generator_UserTableName="ubicaciones" msprop:Generator_RowChangingName="ubicacionesRowChanging" msprop:Generator_RowClassName="ubicacionesRow" msprop:Generator_TableClassName="ubicacionesDataTable" msprop:Generator_TableVarName="tableubicaciones">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_UBICACION" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_UBICACIONColumn" msprop:Generator_ColumnPropNameInRow="ID_UBICACION" msprop:Generator_UserColumnName="ID_UBICACION" msprop:Generator_ColumnVarNameInTable="columnID_UBICACION" type="xs:int" />
+              <xs:element name="lugar_ubicacion" msprop:Generator_ColumnPropNameInTable="lugar_ubicacionColumn" msprop:Generator_ColumnPropNameInRow="lugar_ubicacion" msprop:Generator_UserColumnName="lugar_ubicacion" msprop:Generator_ColumnVarNameInTable="columnlugar_ubicacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_ubicacion" msprop:Generator_ColumnPropNameInTable="descripcion_ubicacionColumn" msprop:Generator_ColumnPropNameInRow="descripcion_ubicacion" msprop:Generator_UserColumnName="descripcion_ubicacion" msprop:Generator_ColumnVarNameInTable="columndescripcion_ubicacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="usuarios" msprop:Generator_RowEvHandlerName="usuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="usuariosRowDeleted" msprop:Generator_RowDeletingName="usuariosRowDeleting" msprop:Generator_RowEvArgName="usuariosRowChangeEvent" msprop:Generator_TablePropName="usuarios" msprop:Generator_RowChangedName="usuariosRowChanged" msprop:Generator_UserTableName="usuarios" msprop:Generator_RowChangingName="usuariosRowChanging" msprop:Generator_RowClassName="usuariosRow" msprop:Generator_TableClassName="usuariosDataTable" msprop:Generator_TableVarName="tableusuarios">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_USUARIO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_USUARIOColumn" msprop:Generator_ColumnPropNameInRow="ID_USUARIO" msprop:Generator_UserColumnName="ID_USUARIO" msprop:Generator_ColumnVarNameInTable="columnID_USUARIO" type="xs:int" />
+              <xs:element name="apellido_usuario" msprop:Generator_ColumnPropNameInTable="apellido_usuarioColumn" msprop:Generator_ColumnPropNameInRow="apellido_usuario" msprop:Generator_UserColumnName="apellido_usuario" msprop:Generator_ColumnVarNameInTable="columnapellido_usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_usuario" msprop:Generator_ColumnPropNameInTable="nombre_usuarioColumn" msprop:Generator_ColumnPropNameInRow="nombre_usuario" msprop:Generator_UserColumnName="nombre_usuario" msprop:Generator_ColumnVarNameInTable="columnnombre_usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rol_usuario" msprop:Generator_ColumnPropNameInTable="rol_usuarioColumn" msprop:Generator_ColumnPropNameInRow="rol_usuario" msprop:Generator_UserColumnName="rol_usuario" msprop:Generator_ColumnVarNameInTable="columnrol_usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono_usuario" msprop:Generator_ColumnPropNameInTable="telefono_usuarioColumn" msprop:Generator_ColumnPropNameInRow="telefono_usuario" msprop:Generator_UserColumnName="telefono_usuario" msprop:Generator_ColumnVarNameInTable="columntelefono_usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email_usuario" msprop:Generator_ColumnPropNameInTable="email_usuarioColumn" msprop:Generator_ColumnPropNameInRow="email_usuario" msprop:Generator_UserColumnName="email_usuario" msprop:Generator_ColumnVarNameInTable="columnemail_usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_nacimiento" msprop:Generator_ColumnPropNameInTable="fecha_nacimientoColumn" msprop:Generator_ColumnPropNameInRow="fecha_nacimiento" msprop:Generator_UserColumnName="fecha_nacimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_nacimiento" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:alertas" />
+      <xs:field xpath="mstns:ID_ALERTA" />
+    </xs:unique>
+    <xs:unique name="lecturas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:lecturas" />
+      <xs:field xpath="mstns:ID_LECTURA" />
+    </xs:unique>
+    <xs:unique name="login_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:login" />
+      <xs:field xpath="mstns:ID_LOGIN" />
+    </xs:unique>
+    <xs:unique name="sensores_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:sensores" />
+      <xs:field xpath="mstns:ID_SENSOR" />
+    </xs:unique>
+    <xs:unique name="ubicaciones_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ubicaciones" />
+      <xs:field xpath="mstns:ID_UBICACION" />
+    </xs:unique>
+    <xs:unique name="usuarios_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:usuarios" />
+      <xs:field xpath="mstns:ID_USUARIO" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_login_usuarios" msdata:parent="usuarios" msdata:child="login" msdata:parentkey="ID_USUARIO" msdata:childkey="ID_USUARIO" msprop:Generator_UserParentTable="usuarios" msprop:Generator_UserChildTable="login" msprop:Generator_RelationVarName="relationFK_login_usuarios" msprop:Generator_ChildPropName="GetloginRows" msprop:Generator_UserRelationName="FK_login_usuarios" msprop:Generator_ParentPropName="usuariosRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
