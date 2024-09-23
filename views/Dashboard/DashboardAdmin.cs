@@ -157,7 +157,8 @@ namespace SistemaDeAlarma.views.Dashboard
 
         private void reportesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            frm_reporteUsuarios _reporteUsuarios = new frm_reporteUsuarios();
+            _reporteUsuarios.Show();
         }
 
         private void listaSensoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,6 +189,37 @@ namespace SistemaDeAlarma.views.Dashboard
         {
             frm_listaAlertas _listaAlertas = new frm_listaAlertas();
             _listaAlertas.Show();
+        }
+
+        private void reportesToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frm_reporteSensores _reporteSensores = new frm_reporteSensores();
+            _reporteSensores.Show();
+        }
+
+        private void reportesToolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            frm_reporteUbicaciones _reporteUbicaciones = new frm_reporteUbicaciones();
+            _reporteUbicaciones.Show();
+        }
+
+        private void reportesToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            frm_reporteLecturas _reporteLecturas = new frm_reporteLecturas();
+            _reporteLecturas.Show();
+        }
+
+        private void reportesToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            frm_reporteAlertas _reporteAlertas = new frm_reporteAlertas();
+            _reporteAlertas.Show();
+        }
+
+        private void lecturasArduinoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_lecturasArduino _LecturasArduino = new frm_lecturasArduino();
+            _LecturasArduino.Show();
+
         }
     }
 }

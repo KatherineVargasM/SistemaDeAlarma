@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sensoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaAlarmaHumoDataSet = new SistemaDeAlarma.SistemaAlarmaHumoDataSet();
-            this.sensoresTableAdapter = new SistemaDeAlarma.SistemaAlarmaHumoDataSetTableAdapters.sensoresTableAdapter();
-            this.sensoresBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.iDSENSORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tiposensorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechainstalacionsensorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadosensorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lugarubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sensoresBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaAlarmaHumoDataSet = new SistemaDeAlarma.SistemaAlarmaHumoDataSet();
+            this.sensoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sensoresTableAdapter = new SistemaDeAlarma.SistemaAlarmaHumoDataSetTableAdapters.sensoresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sensoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaAlarmaHumoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sensoresBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaAlarmaHumoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sensoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Titulo
@@ -61,6 +61,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDSENSORDataGridViewTextBoxColumn,
@@ -73,25 +74,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(674, 248);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // sensoresBindingSource
-            // 
-            this.sensoresBindingSource.DataMember = "sensores";
-            this.sensoresBindingSource.DataSource = this.sistemaAlarmaHumoDataSet;
-            // 
-            // sistemaAlarmaHumoDataSet
-            // 
-            this.sistemaAlarmaHumoDataSet.DataSetName = "SistemaAlarmaHumoDataSet";
-            this.sistemaAlarmaHumoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sensoresTableAdapter
-            // 
-            this.sensoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // sensoresBindingSource1
-            // 
-            this.sensoresBindingSource1.DataMember = "sensores";
-            this.sensoresBindingSource1.DataSource = this.sistemaAlarmaHumoDataSet;
             // 
             // iDSENSORDataGridViewTextBoxColumn
             // 
@@ -129,6 +111,25 @@
             this.lugarubicacionDataGridViewTextBoxColumn.Name = "lugarubicacionDataGridViewTextBoxColumn";
             this.lugarubicacionDataGridViewTextBoxColumn.Width = 175;
             // 
+            // sensoresBindingSource1
+            // 
+            this.sensoresBindingSource1.DataMember = "sensores";
+            this.sensoresBindingSource1.DataSource = this.sistemaAlarmaHumoDataSet;
+            // 
+            // sistemaAlarmaHumoDataSet
+            // 
+            this.sistemaAlarmaHumoDataSet.DataSetName = "SistemaAlarmaHumoDataSet";
+            this.sistemaAlarmaHumoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sensoresBindingSource
+            // 
+            this.sensoresBindingSource.DataMember = "sensores";
+            this.sensoresBindingSource.DataSource = this.sistemaAlarmaHumoDataSet;
+            // 
+            // sensoresTableAdapter
+            // 
+            this.sensoresTableAdapter.ClearBeforeFill = true;
+            // 
             // frm_listaSensores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -145,9 +146,9 @@
             this.Text = "Lista de Sensores";
             this.Load += new System.EventHandler(this.frm_listaSensores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sensoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaAlarmaHumoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sensoresBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaAlarmaHumoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sensoresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

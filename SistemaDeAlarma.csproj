@@ -97,6 +97,12 @@
     <Compile Include="views\Alertas\frm_listaAlertas.Designer.cs">
       <DependentUpon>frm_listaAlertas.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\Alertas\frm_reporteAlertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Alertas\frm_reporteAlertas.Designer.cs">
+      <DependentUpon>frm_reporteAlertas.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\Dashboard\DashboardResidente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,11 +133,23 @@
     <Compile Include="views\Lecturas\frm_lecturas.Designer.cs">
       <DependentUpon>frm_lecturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\Lecturas\frm_lecturasArduino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Lecturas\frm_lecturasArduino.Designer.cs">
+      <DependentUpon>frm_lecturasArduino.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\Lecturas\frm_listaLecturas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\Lecturas\frm_listaLecturas.Designer.cs">
       <DependentUpon>frm_listaLecturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Lecturas\frm_reporteLecturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Lecturas\frm_reporteLecturas.Designer.cs">
+      <DependentUpon>frm_reporteLecturas.cs</DependentUpon>
     </Compile>
     <Compile Include="views\Login\frm_loginContrasenia.cs">
       <SubType>Form</SubType>
@@ -157,6 +175,12 @@
     <Compile Include="views\Sensores\frm_listaSensores.Designer.cs">
       <DependentUpon>frm_listaSensores.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\Sensores\frm_reporteSensores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Sensores\frm_reporteSensores.Designer.cs">
+      <DependentUpon>frm_reporteSensores.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\Sensores\frm_sensores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +193,12 @@
     <Compile Include="views\Ubicaciones\frm_listaUbicaciones.Designer.cs">
       <DependentUpon>frm_listaUbicaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\Ubicaciones\frm_reporteUbicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Ubicaciones\frm_reporteUbicaciones.Designer.cs">
+      <DependentUpon>frm_reporteUbicaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\Ubicaciones\frm_ubicaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +210,12 @@
     </Compile>
     <Compile Include="views\Usuarios\frm_listaUsuarios.Designer.cs">
       <DependentUpon>frm_listaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Usuarios\frm_reporteUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Usuarios\frm_reporteUsuarios.Designer.cs">
+      <DependentUpon>frm_reporteUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="views\Usuarios\frm_usuarios.cs">
       <SubType>Form</SubType>
@@ -200,8 +236,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\ReporteAlertas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteLecturas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteSensores.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteUbicaciones.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteUsuarios.rdlc" />
     <EmbeddedResource Include="views\Alertas\frm_listaAlertas.resx">
       <DependentUpon>frm_listaAlertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Alertas\frm_reporteAlertas.resx">
+      <DependentUpon>frm_reporteAlertas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Dashboard\DashboardAdmin.resx">
       <DependentUpon>DashboardAdmin.cs</DependentUpon>
@@ -209,11 +253,23 @@
     <EmbeddedResource Include="views\Alertas\frm_alertas.resx">
       <DependentUpon>frm_alertas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\Dashboard\DashboardGuardia.resx">
+      <DependentUpon>DashboardGuardia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Dashboard\DashboardResidente.resx">
+      <DependentUpon>DashboardResidente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\Lecturas\frm_lecturas.resx">
       <DependentUpon>frm_lecturas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\Lecturas\frm_lecturasArduino.resx">
+      <DependentUpon>frm_lecturasArduino.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\Lecturas\frm_listaLecturas.resx">
       <DependentUpon>frm_listaLecturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Lecturas\frm_reporteLecturas.resx">
+      <DependentUpon>frm_reporteLecturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Login\frm_loginContrasenia.resx">
       <DependentUpon>frm_loginContrasenia.cs</DependentUpon>
@@ -227,17 +283,26 @@
     <EmbeddedResource Include="views\Sensores\frm_listaSensores.resx">
       <DependentUpon>frm_listaSensores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\Sensores\frm_reporteSensores.resx">
+      <DependentUpon>frm_reporteSensores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\Sensores\frm_sensores.resx">
       <DependentUpon>frm_sensores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Ubicaciones\frm_listaUbicaciones.resx">
       <DependentUpon>frm_listaUbicaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\Ubicaciones\frm_reporteUbicaciones.resx">
+      <DependentUpon>frm_reporteUbicaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\Ubicaciones\frm_ubicaciones.resx">
       <DependentUpon>frm_ubicaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Usuarios\frm_listaUsuarios.resx">
       <DependentUpon>frm_listaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Usuarios\frm_reporteUsuarios.resx">
+      <DependentUpon>frm_reporteUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Usuarios\frm_usuarios.resx">
       <DependentUpon>frm_usuarios.cs</DependentUpon>
@@ -309,8 +374,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

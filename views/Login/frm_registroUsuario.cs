@@ -17,11 +17,20 @@ namespace SistemaDeAlarma.views.Login
         public frm_registroUsuario()
         {
             InitializeComponent();
+            InicializarComboBox();
         }
 
         private void lbl_FechaNaci_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void InicializarComboBox()
+        {
+            cmb_rol.Items.Add("Administrador");
+            cmb_rol.Items.Add("GuardiaSeguridad");
+            cmb_rol.Items.Add("Residente");
+            cmb_rol.SelectedIndex = 2;
         }
 
         private void btn_siguiente_MouseEnter(object sender, EventArgs e)
@@ -38,7 +47,7 @@ namespace SistemaDeAlarma.views.Login
         {
             if (string.IsNullOrWhiteSpace(txt_apellido.Text) ||
                 string.IsNullOrWhiteSpace(txt_nombre.Text) ||
-                string.IsNullOrWhiteSpace(txt_rol.Text) ||
+                cmb_rol.SelectedItem == null ||
                 string.IsNullOrWhiteSpace(txt_telefono.Text) ||
                 string.IsNullOrWhiteSpace(txt_email.Text))
             {
@@ -55,7 +64,7 @@ namespace SistemaDeAlarma.views.Login
                 {
                     insertCmd.Parameters.AddWithValue("@apellido", txt_apellido.Text);
                     insertCmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
-                    insertCmd.Parameters.AddWithValue("@rol", txt_rol.Text);
+                    insertCmd.Parameters.AddWithValue("@rol", cmb_rol.SelectedItem.ToString());
                     insertCmd.Parameters.AddWithValue("@telefono", txt_telefono.Text);
                     insertCmd.Parameters.AddWithValue("@correo", txt_email.Text);
                     insertCmd.Parameters.AddWithValue("@fechaNacimiento", dtp_fechanacimiento.Value);

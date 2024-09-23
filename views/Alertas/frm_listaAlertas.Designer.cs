@@ -34,7 +34,6 @@
             this.sistemaAlarmaHumoDataSet = new SistemaDeAlarma.SistemaAlarmaHumoDataSet();
             this.alertasTableAdapter = new SistemaDeAlarma.SistemaAlarmaHumoDataSetTableAdapters.alertasTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.alertasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.iDALERTADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidousuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechalecturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +42,7 @@
             this.nivelalarmaalertaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionalertaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechahoraalertaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alertasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.alertasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaAlarmaHumoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,6 +78,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDALERTADataGridViewTextBoxColumn,
@@ -89,16 +90,12 @@
             this.descripcionalertaDataGridViewTextBoxColumn,
             this.fechahoraalertaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.alertasBindingSource1;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.Location = new System.Drawing.Point(70, 100);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1045, 244);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // alertasBindingSource1
-            // 
-            this.alertasBindingSource1.DataMember = "alertas";
-            this.alertasBindingSource1.DataSource = this.sistemaAlarmaHumoDataSet;
             // 
             // iDALERTADataGridViewTextBoxColumn
             // 
@@ -155,6 +152,11 @@
             this.fechahoraalertaDataGridViewTextBoxColumn.HeaderText = "Fecha Registro";
             this.fechahoraalertaDataGridViewTextBoxColumn.Name = "fechahoraalertaDataGridViewTextBoxColumn";
             this.fechahoraalertaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // alertasBindingSource1
+            // 
+            this.alertasBindingSource1.DataMember = "alertas";
+            this.alertasBindingSource1.DataSource = this.sistemaAlarmaHumoDataSet;
             // 
             // frm_listaAlertas
             // 

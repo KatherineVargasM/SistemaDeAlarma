@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using SistemaDeAlarma.views.Dashboard;
 using SistemaDeAlarma.config;
 using SistemaDeAlarma.views.Login;
+using SistemaDeAlarma.views.Lecturas;
 
 namespace SistemaDeAlarma
 {
@@ -187,6 +188,12 @@ namespace SistemaDeAlarma
         private void btn_Aceptar_MouseLeave(object sender, EventArgs e)
         {
             btn_Aceptar.ForeColor= Color.SaddleBrown;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            DashboardResidente dashboardResidente = new DashboardResidente();
+            dashboardResidente.Show();
         }
     }
 }

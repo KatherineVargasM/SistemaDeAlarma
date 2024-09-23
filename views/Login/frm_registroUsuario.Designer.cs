@@ -30,7 +30,6 @@
         {
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_telefono = new System.Windows.Forms.TextBox();
-            this.txt_rol = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.lbl_FechaNaci = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.dtp_fechanacimiento = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_siguiente = new System.Windows.Forms.Button();
+            this.cmb_rol = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,14 +61,6 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(274, 26);
             this.txt_telefono.TabIndex = 25;
-            // 
-            // txt_rol
-            // 
-            this.txt_rol.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.txt_rol.Location = new System.Drawing.Point(65, 215);
-            this.txt_rol.Name = "txt_rol";
-            this.txt_rol.Size = new System.Drawing.Size(274, 26);
-            this.txt_rol.TabIndex = 24;
             // 
             // txt_nombre
             // 
@@ -208,18 +200,27 @@
             this.btn_siguiente.MouseEnter += new System.EventHandler(this.btn_siguiente_MouseEnter);
             this.btn_siguiente.MouseLeave += new System.EventHandler(this.btn_siguiente_MouseLeave);
             // 
+            // cmb_rol
+            // 
+            this.cmb_rol.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.cmb_rol.FormattingEnabled = true;
+            this.cmb_rol.Location = new System.Drawing.Point(65, 215);
+            this.cmb_rol.Name = "cmb_rol";
+            this.cmb_rol.Size = new System.Drawing.Size(274, 28);
+            this.cmb_rol.TabIndex = 30;
+            // 
             // frm_registroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaDeAlarma.Properties.Resources.Logo_Negocio_Floral_Beige;
             this.ClientSize = new System.Drawing.Size(398, 487);
+            this.Controls.Add(this.cmb_rol);
             this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dtp_fechanacimiento);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.txt_telefono);
-            this.Controls.Add(this.txt_rol);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.txt_apellido);
             this.Controls.Add(this.lbl_FechaNaci);
@@ -245,7 +246,6 @@
         #endregion
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_telefono;
-        private System.Windows.Forms.TextBox txt_rol;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_apellido;
         private System.Windows.Forms.Label lbl_FechaNaci;
@@ -258,5 +258,6 @@
         private System.Windows.Forms.DateTimePicker dtp_fechanacimiento;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_siguiente;
+        private System.Windows.Forms.ComboBox cmb_rol;
     }
 }
