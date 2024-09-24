@@ -102,13 +102,14 @@ namespace SistemaDeAlarma
         {
             if (ConfiguracionProyecto.Rol == "Residente")
             {
-                DashboardAdmin dashboardResidente = new DashboardAdmin();
-                dashboardResidente.Show();
+                DashboardResidente dashboardAdmin = new DashboardResidente();
+                dashboardAdmin.Show();
             }
             else if (ConfiguracionProyecto.Rol == "Administrador")
             {
-                DashboardResidente dashboardAdmin = new DashboardResidente();
-                dashboardAdmin.Show();
+
+                DashboardAdmin dashboardResidente = new DashboardAdmin();
+                dashboardResidente.Show();
             }
             else if (ConfiguracionProyecto.Rol == "GuardiaSeguridad")
             {
